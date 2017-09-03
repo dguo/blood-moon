@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+from subprocess import call
+import sys
+
+parser = argparse.ArgumentParser(prog='./dev')
+subparsers = parser.add_subparsers(metavar='<command>', title='commands')
+
+DOCKER_RUN = ['docker', 'run', '-it', '--rm', '-v',
+              os.getcwd() + ':/src:cached', '-w=/src', 'node:8.4.0-alpine']
+
+def start(args, remaining):
+    call(DOCKER_RUN + ['npm', 'install'])
+parser_start = subparsers.add_parser('start',
+    help='Initialize the development environment')
+parser_start.set_defaults(func=start)
+
+def sh(args, remaining):
+    call(DOCKER_RUN + ['sh'])
+parser_sh = subparsers.add_parser('sh', help='Bring up a shell')
+parser_sh.set_defaults(func=sh)
+
+def npm(args, remaining):
+    call(DOCKER_RUN + ['npm'] + remaining or [])
+parser_npm = subparsers.add_parser('npm', help='Run a npm command')
+parser_npm.set_defaults(func=npm)
+
+def generate(args, remaining):
+    call(DOCKER_RUN + ['node', 'generate.js'])
+parser_generate = subparsers.add_parser('generate', help='Generate the themes')
+parser_generate.set_defaults(func=generate)
+
+if len(sys.argv) > 1:
+    args, remaining = parser.parse_known_args()
+    args.func(args, remaining)
+else:
+    parser.print_help()
