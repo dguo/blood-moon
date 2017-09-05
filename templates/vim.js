@@ -43,11 +43,14 @@ hi Normal ${translate(colors.foreground, colors.background)}
 
 hi Constant ${translate(colors.main.magenta)}
 hi Comment ${translate(colors.comment)}
-hi Function ${translate(colors.main.green)}
+hi Function ${translate(colors.foreground)}
 hi Keyword ${translate(colors.main.green)}
+hi MatchParen ${translate(colors.selectionText, colors.selection)}
+hi Noise ${translate(colors.main.green)}
 hi Statement ${translate(colors.main.green)}
 hi StorageClass ${translate(colors.main.red)}
 hi String ${translate(colors.main.blue)}
+hi Type ${translate(colors.main.green)}
 hi Visual ${translate(colors.selectionText, colors.selection)}
 
 " UI chrome """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,6 +69,17 @@ hi EndOfBuffer ${translate(colors.alt.grey)}
 " Python """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " JavaScript """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi jsObjectProp ${translate(colors.main.red)}
+hi jsObjectKey ${translate(colors.main.red)}
+hi jsObject ${translate(colors.main.red)}
+hi jsObjectBraces ${translate(colors.main.cyan)}
+hi link jsBrackets jsObjectBraces
+hi jsGlobalObjects ${translate(colors.foreground)}
+hi link jsBuiltins jsGlobalObjects
+hi link jsGlobalNodeObjects jsGlobalObjects
+hi jsFuncCall ${translate(colors.main.yellow)}
+hi link jsParens jsFuncCall
+hi jsBlockLabel ${translate(colors.foreground)}
 
 " Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 `;
