@@ -52,7 +52,10 @@ function generate(name, colors) {
 </dict>
 </plist>`;
 
-  return output;
+  return {
+    fileName: `${name}.itermcolors`,
+    output
+  };
 }
 
 module.exports = generate;

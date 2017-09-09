@@ -16,8 +16,8 @@ function translate(fgHex, bgHex) {
   return values.join(' ');
 }
 
-function generate(colors) {
-  return `" Name: Blood Moon color scheme
+function generate(name, colors) {
+  const output = `" Name: Blood Moon color scheme
 " Maintainer: Danny Guo
 " Description: Dark and bold color scheme
 " URL: https://github.com/dguo/blood-moon
@@ -83,6 +83,11 @@ hi jsBlockLabel ${translate(colors.foreground)}
 
 " Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 `;
+
+  return {
+    fileName: `${name}.vim`,
+    output
+  };
 }
 
 module.exports = generate;
