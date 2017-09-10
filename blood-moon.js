@@ -12,38 +12,38 @@ function lighten(hex, value) {
 }
 
 const colors = {
-    main: {
-      black: '#10100e',
-      red: '#C40233',
-      green: '#03C03C',
-      yellow: '#FFD700',
-      blue: '#0087BD',
-      magenta: '#9A4EAE',
-      cyan: '#0D98BA',
-      white: '#c6c6c4'
-    },
-    bright: {
-      black: '#343434',
-      red: '#FF6E67',
-      green: '#5FFA68',
-      yellow: '#FFFC67',
-      blue: '#5CBDFA',
-      magenta: '#FF77FF',
-      cyan: '#60FDFF',
-      white: '#FFFFFF'
-    },
-    alt: {
-      grey: '#696969'
-    }
+  black: '#10100E',
+  gray: '#696969', // Dim gray
+  white: '#C6C6C4',
+  lightWhite: '#FFFAFA', // Snow
+  green: '#009F6B', // NCS green
+  lightGreen: '#03C03C', // Dark pastel green
+  cyan: '#20B2AA', // Light sea green
+  lightCyan: '#00CCCC', // Robin egg blue
+  blue: '#0087BD', // NCS blue
+  lightBlue: '#007FFF', // Azure
+  magenta: '#9A4EAE',
+  pink: '#FF1493', // Deep pink
+  brown: '#CD853F', // Peru
+  red: '#C40233', // NCS red
+  darkRed: '#800020', // Oxblood
+  lightRed: '#FF2400', // Scarlet
+  orange: '#EE7F2D', // Princeton
+  yellow: '#FFD700', // Gold
+  lightYellow: '#FDFF00', // Lemon
 };
 
-colors.background = colors.main.black;
-colors.foreground = colors.main.white;
-colors.selection = '#800020'; // Oxblood
-colors.selectionText = colors.main.white;
-colors.link = colors.main.blue;
-colors.comment = colors.alt.grey;
+colors.background = colors.black;
+colors.foreground = colors.white;
+colors.selection = colors.darkRed;
+colors.selectionText = colors.white;
+colors.link = colors.blue;
+
+// UI
 colors.ruler = lighten(colors.background, 0.3);
+
+// syntax
+colors.comment = colors.gray;
 
 module.exports = {
   colors,

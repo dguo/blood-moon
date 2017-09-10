@@ -20,21 +20,27 @@ if !has('gui_running') && &t_Co != 256
 endif
 
 " Basics """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Normal guifg=#c6c6c4 ctermfg=188 guibg=#10100e ctermbg=16
+hi Normal guifg=#C6C6C4 ctermfg=188 guibg=#10100E ctermbg=16
 
-hi Constant guifg=#9A4EAE ctermfg=139
+hi IncSearch guifg=#C6C6C4 ctermfg=188 guibg=#800020 ctermbg=125
+hi MatchParen guifg=#C6C6C4 ctermfg=188 guibg=#800020 ctermbg=125
+hi Search guifg=#C6C6C4 ctermfg=188 guibg=#800020 ctermbg=125
+hi Visual guifg=#C6C6C4 ctermfg=188 guibg=#800020 ctermbg=125
+
+" Syntax """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Comment guifg=#696969 ctermfg=241
-hi Function guifg=#c6c6c4 ctermfg=188
-hi Keyword guifg=#03C03C ctermfg=41
-hi MatchParen guifg=#c6c6c4 ctermfg=188 guibg=#800020 ctermbg=125
-hi Noise guifg=#03C03C ctermfg=41
-hi Statement guifg=#03C03C ctermfg=41
-hi StorageClass guifg=#C40233 ctermfg=161
+hi Constant guifg=#9A4EAE ctermfg=139
 hi String guifg=#0087BD ctermfg=38
-hi Type guifg=#03C03C ctermfg=41
-hi Visual guifg=#c6c6c4 ctermfg=188 guibg=#800020 ctermbg=125
+hi Character guifg=#0087BD ctermfg=38
+hi Identifier guifg=#C40233 ctermfg=161
+hi Statement guifg=#009F6B ctermfg=36
+hi Noise guifg=#009F6B ctermfg=36
+hi PreProc guifg=#009F6B ctermfg=36
+hi Type guifg=#009F6B ctermfg=36
+hi Special guifg=#EE7F2D ctermfg=209
+hi Todo guifg=#10100E ctermfg=16 guibg=#EE7F2D ctermbg=209
 
-" UI chrome """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi LineNr guifg=#696969 ctermfg=241
 hi CursorLineNr guifg=#C40233 ctermfg=161
 hi clear CursorLine
@@ -53,13 +59,15 @@ hi EndOfBuffer guifg=#696969 ctermfg=241
 hi jsObjectProp guifg=#C40233 ctermfg=161
 hi jsObjectKey guifg=#C40233 ctermfg=161
 hi jsObject guifg=#C40233 ctermfg=161
-hi jsObjectBraces guifg=#0D98BA ctermfg=38
+hi jsObjectBraces guifg=#20B2AA ctermfg=73
 hi link jsBrackets jsObjectBraces
-hi jsGlobalObjects guifg=#c6c6c4 ctermfg=188
+hi jsGlobalObjects guifg=#C6C6C4 ctermfg=188
 hi link jsBuiltins jsGlobalObjects
 hi link jsGlobalNodeObjects jsGlobalObjects
 hi jsFuncCall guifg=#FFD700 ctermfg=220
 hi link jsParens jsFuncCall
-hi jsBlockLabel guifg=#c6c6c4 ctermfg=188
+hi jsBlockLabel guifg=#C6C6C4 ctermfg=188
+hi link jsVariableDef Identifier
+hi link jsFuncArgs Identifier
 
 " Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

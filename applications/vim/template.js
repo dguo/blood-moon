@@ -41,24 +41,30 @@ endif
 " Basics """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Normal ${translate(colors.foreground, colors.background)}
 
-hi Constant ${translate(colors.main.magenta)}
-hi Comment ${translate(colors.comment)}
-hi Function ${translate(colors.foreground)}
-hi Keyword ${translate(colors.main.green)}
+hi IncSearch ${translate(colors.selectionText, colors.selection)}
 hi MatchParen ${translate(colors.selectionText, colors.selection)}
-hi Noise ${translate(colors.main.green)}
-hi Statement ${translate(colors.main.green)}
-hi StorageClass ${translate(colors.main.red)}
-hi String ${translate(colors.main.blue)}
-hi Type ${translate(colors.main.green)}
+hi Search ${translate(colors.selectionText, colors.selection)}
 hi Visual ${translate(colors.selectionText, colors.selection)}
 
-" UI chrome """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi LineNr ${translate(colors.alt.grey)}
-hi CursorLineNr ${translate(colors.main.red)}
+" Syntax """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi Comment ${translate(colors.comment)}
+hi Constant ${translate(colors.magenta)}
+hi String ${translate(colors.blue)}
+hi Character ${translate(colors.blue)}
+hi Identifier ${translate(colors.red)}
+hi Statement ${translate(colors.green)}
+hi Noise ${translate(colors.green)}
+hi PreProc ${translate(colors.green)}
+hi Type ${translate(colors.green)}
+hi Special ${translate(colors.orange)}
+hi Todo ${translate(colors.background, colors.orange)}
+
+" UI """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi LineNr ${translate(colors.gray)}
+hi CursorLineNr ${translate(colors.red)}
 hi clear CursorLine
 hi ColorColumn ${translate(null, colors.ruler)}
-hi EndOfBuffer ${translate(colors.alt.grey)}
+hi EndOfBuffer ${translate(colors.gray)}
 
 " GitGutter """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -69,17 +75,19 @@ hi EndOfBuffer ${translate(colors.alt.grey)}
 " Python """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " JavaScript """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi jsObjectProp ${translate(colors.main.red)}
-hi jsObjectKey ${translate(colors.main.red)}
-hi jsObject ${translate(colors.main.red)}
-hi jsObjectBraces ${translate(colors.main.cyan)}
+hi jsObjectProp ${translate(colors.red)}
+hi jsObjectKey ${translate(colors.red)}
+hi jsObject ${translate(colors.red)}
+hi jsObjectBraces ${translate(colors.cyan)}
 hi link jsBrackets jsObjectBraces
 hi jsGlobalObjects ${translate(colors.foreground)}
 hi link jsBuiltins jsGlobalObjects
 hi link jsGlobalNodeObjects jsGlobalObjects
-hi jsFuncCall ${translate(colors.main.yellow)}
+hi jsFuncCall ${translate(colors.yellow)}
 hi link jsParens jsFuncCall
 hi jsBlockLabel ${translate(colors.foreground)}
+hi link jsVariableDef Identifier
+hi link jsFuncArgs Identifier
 
 " Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 `;
