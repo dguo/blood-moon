@@ -65,8 +65,22 @@ hi CursorLineNr ${translate(colors.red)}
 hi clear CursorLine
 hi ColorColumn ${translate(null, colors.ruler)}
 hi EndOfBuffer ${translate(colors.gray)}
+hi Folded ${translate(colors.black, colors.orange)}
+hi clear VertSplit
+hi VertSplit ${translate(colors.foreground, colors.background)}
 
-" Autocomplete (popup menu) """"""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi StatusLine ${translate(colors.darkRed, colors.white)}
+hi StatusLineNC ${translate(colors.white, colors.darkRed)} " not-current windows
+hi WildMenu ${translate(colors.darkRed, colors.lightWhite)}
+
+" Diffs """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi DiffChange ${translate(colors.black, colors.lightYellow)}
+hi DiffText ${translate(colors.black, colors.lightBlue)}
+hi DiffAdd ${translate(colors.black, colors.lightGreen)}
+hi DiffDelete ${translate(colors.black, colors.lightRed)}
+
+" Popup menu """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Pmenu ${translate(colors.background, colors.lightWhite)}
 hi PmenuSel ${translate(colors.lightWhite, colors.selection)}
 hi PmenuSbar ${translate(null, colors.foreground)}
