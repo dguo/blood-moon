@@ -66,6 +66,12 @@ hi clear CursorLine
 hi ColorColumn ${translate(null, colors.ruler)}
 hi EndOfBuffer ${translate(colors.gray)}
 
+" Autocomplete (popup menu) """"""""""""""""""""""""""""""""""""""""""""""""""""
+hi Pmenu ${translate(colors.background, colors.lightWhite)}
+hi PmenuSel ${translate(colors.lightWhite, colors.selection)}
+hi PmenuSbar ${translate(null, colors.foreground)}
+hi PmenuThumb ${translate(null, colors.gray)}
+
 " GitGutter """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Shell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

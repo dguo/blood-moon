@@ -47,6 +47,12 @@ hi clear CursorLine
 hi ColorColumn guibg=#141412 ctermbg=16
 hi EndOfBuffer guifg=#696969 ctermfg=241
 
+" Autocomplete (popup menu) """"""""""""""""""""""""""""""""""""""""""""""""""""
+hi Pmenu guifg=#10100E ctermfg=16 guibg=#FFFAFA ctermbg=231
+hi PmenuSel guifg=#FFFAFA ctermfg=231 guibg=#800020 ctermbg=125
+hi PmenuSbar guibg=#C6C6C4 ctermbg=188
+hi PmenuThumb guibg=#696969 ctermbg=241
+
 " GitGutter """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Shell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
