@@ -28,8 +28,11 @@ parser_npm = subparsers.add_parser('npm', help='Run a npm command')
 parser_npm.set_defaults(func=npm)
 
 def generate(args, remaining):
-    call(DOCKER_RUN + ['node', 'generate.js'])
+    call(DOCKER_RUN + ['npm', '--loglevel=warn', 'run',
+                       'generate' + (':watch' if args.watch else '')])
 parser_generate = subparsers.add_parser('generate', help='Generate the themes')
+parser_generate.add_argument('-w', '--watch', action='store_true',
+                             help='watch for file changes, and regenerate')
 parser_generate.set_defaults(func=generate)
 
 if len(sys.argv) > 1:

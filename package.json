@@ -2,8 +2,10 @@
   "name": "blood-moon",
   "version": "0.1.0",
   "description": "Generate the Blood Moon color scheme",
-  "main": "index.js",
+  "main": "generate.ts",
   "scripts": {
+    "generate": "ts-node generate.ts",
+    "generate:watch": "nodemon -e ts -x ts-node generate.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,8 +13,7 @@
     "url": "git+https://github.com/dguo/blood-moon.git"
   },
   "keywords": [
-    "color",
-    "scheme"
+    "colorscheme"
   ],
   "author": "Danny Guo",
   "license": "MIT",
@@ -20,7 +21,12 @@
     "url": "https://github.com/dguo/blood-moon/issues"
   },
   "homepage": "https://github.com/dguo/blood-moon#readme",
-  "devDependencies": {
-    "color": "2.0.0"
+  "dependencies": {
+    "@types/color": "2.0.0",
+    "@types/node": "8.0.28",
+    "color": "2.0.0",
+    "nodemon": "1.12.1",
+    "ts-node": "3.3.0",
+    "typescript": "2.5.2"
   }
 }

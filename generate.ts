@@ -1,10 +1,10 @@
-const fs = require('fs');
+import * as fs from 'fs';
 
-const scheme = require('./blood-moon.js');
+import scheme from './blood-moon';
 
 const applications = fs.readdirSync('./applications');
-applications.forEach(application => {
-  const generate = require(`./applications/${application}/template.js`);
+applications.forEach(async application => {
+  const {generate} = await import(`./applications/${application}/template`);
   const {fileName, output} = generate(scheme.name, scheme.colors);
   fs.writeFileSync(`./applications/${application}/${fileName}`, output);
 });

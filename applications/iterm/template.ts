@@ -1,6 +1,8 @@
-const Color = require('color');
+import * as Color from 'color';
 
-function generate(name, colors) {
+import {templateOutput} from '../../types';
+
+export function generate(name: string, colors):templateOutput {
   const keys = [
     ['Ansi 0 Color', colors.black],
     ['Ansi 1 Color', colors.red],
@@ -57,5 +59,3 @@ function generate(name, colors) {
     output
   };
 }
-
-module.exports = generate;

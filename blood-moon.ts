@@ -1,17 +1,17 @@
-const Color = require('color');
+import * as Color from 'color';
 
-function lighten(hex, value) {
+function lighten(hex: string, value: number): string {
   const rgb = Color(hex).lighten(value).rgb().array();
 
   const lightenedHex = '#' + rgb.map(x => {
-    const xHex = parseInt(x, 10).toString(16);
+    const xHex = Math.floor(x).toString(16);
     return xHex.length === 1 ? '0' + xHex : xHex;
   }).join('');
 
   return lightenedHex;
 }
 
-const colors = {
+const colors: any = {
   black: '#10100E',
   gray: '#696969', // Dim gray
   white: '#C6C6C4',
@@ -45,7 +45,7 @@ colors.ruler = lighten(colors.background, 0.3);
 // syntax
 colors.comment = colors.gray;
 
-module.exports = {
+export default {
   colors,
   name: 'blood-moon'
 };

@@ -1,7 +1,7 @@
-const Color = require('color');
+import * as Color from 'color';
 
-function translate(fgHex, bgHex) {
-  const values = [];
+function translate(fgHex: string | null, bgHex?: string) {
+  const values: string[] = [];
 
   if (fgHex) {
     values.push(`guifg=${fgHex}`);
@@ -16,7 +16,7 @@ function translate(fgHex, bgHex) {
   return values.join(' ');
 }
 
-function generate(name, colors) {
+export function generate(name:string, colors): any {
   const output = `" Name: Blood Moon color scheme
 " Maintainer: Danny Guo
 " Description: Dark and bold color scheme
@@ -117,5 +117,3 @@ hi link jsFuncArgs Identifier
     output
   };
 }
-
-module.exports = generate;
