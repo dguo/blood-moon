@@ -8,29 +8,29 @@ import sys
 parser = argparse.ArgumentParser(prog='./dev')
 subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 
-DOCKER_RUN = ['docker', 'run', '-it', '--rm', '-v',
-              os.getcwd() + ':/src:cached', '-w=/src', 'node:8.4.0-alpine']
+DOCKER_RUN = ['docker', 'run', '--init', '-it', '--rm', '-v',
+              os.getcwd() + ':/src:cached', '-w=/src', 'node:8.6.0-alpine']
 
 def start(args, remaining):
-    call(DOCKER_RUN + ['npm', 'install'])
+    call(DOCKER_RUN + ['yarn', 'install'])
 parser_start = subparsers.add_parser('start',
-    help='Initialize the development environment')
+    help='initialize the development environment')
 parser_start.set_defaults(func=start)
 
 def sh(args, remaining):
     call(DOCKER_RUN + ['sh'])
-parser_sh = subparsers.add_parser('sh', help='Bring up a shell')
+parser_sh = subparsers.add_parser('sh', help='bring up a shell')
 parser_sh.set_defaults(func=sh)
 
-def npm(args, remaining):
-    call(DOCKER_RUN + ['npm'] + remaining or [])
-parser_npm = subparsers.add_parser('npm', help='Run a npm command')
-parser_npm.set_defaults(func=npm)
+def yarn(args, remaining):
+    call(DOCKER_RUN + ['yarn'] + remaining or [])
+parser_yarn = subparsers.add_parser('yarn', help='run a yarn command')
+parser_yarn.set_defaults(func=yarn)
 
 def generate(args, remaining):
-    call(DOCKER_RUN + ['npm', '--loglevel=warn', 'run',
+    call(DOCKER_RUN + ['yarn', 'run',
                        'generate' + (':watch' if args.watch else '')])
-parser_generate = subparsers.add_parser('generate', help='Generate the themes')
+parser_generate = subparsers.add_parser('generate', help='generate the themes')
 parser_generate.add_argument('-w', '--watch', action='store_true',
                              help='watch for file changes, and regenerate')
 parser_generate.set_defaults(func=generate)
