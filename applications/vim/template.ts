@@ -1,5 +1,7 @@
 import * as Color from 'color';
 
+import {ColorScheme, TemplateOutput} from '../../types';
+
 function translate(fgHex: string | null, bgHex?: string) {
   const values: string[] = [];
 
@@ -16,8 +18,8 @@ function translate(fgHex: string | null, bgHex?: string) {
   return values.join(' ');
 }
 
-export function generate(name:string, colors): any {
-  const output = `" Name: Blood Moon color scheme
+export function generate(name:string, colors: ColorScheme): TemplateOutput {
+  const content = `" Name: Blood Moon color scheme
 " Maintainer: Danny Guo
 " Description: Dark and bold color scheme
 " URL: https://github.com/dguo/blood-moon
@@ -114,6 +116,6 @@ hi link jsFuncArgs Identifier
 
   return {
     fileName: `${name}.vim`,
-    output
+    content
   };
 }

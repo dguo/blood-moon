@@ -1,5 +1,7 @@
 import * as Color from 'color';
 
+import {ColorScheme, Template} from './types';
+
 function lighten(hex: string, value: number): string {
   const rgb = Color(hex).lighten(value).rgb().array();
 
@@ -11,41 +13,60 @@ function lighten(hex: string, value: number): string {
   return lightenedHex;
 }
 
-const colors: any = {
-  black: '#10100E',
-  gray: '#696969', // Dim gray
-  white: '#C6C6C4',
-  lightWhite: '#FFFAFA', // Snow
-  green: '#009F6B', // NCS green
-  lightGreen: '#03C03C', // Dark pastel green
-  cyan: '#20B2AA', // Light sea green
-  lightCyan: '#00CCCC', // Robin egg blue
-  blue: '#0087BD', // NCS blue
-  lightBlue: '#007FFF', // Azure
-  magenta: '#9A4EAE',
-  pink: '#FF1493', // Deep pink
-  brown: '#CD853F', // Peru
-  red: '#C40233', // NCS red
-  darkRed: '#800020', // Oxblood
-  lightRed: '#FF2400', // Scarlet
-  orange: '#EE7F2D', // Princeton
-  yellow: '#FFD700', // Gold
-  lightYellow: '#FDFF00', // Lemon
+const black = '#10100E';
+const gray = '#696969'; // Dim gray
+const white = '#C6C6C4';
+const lightWhite = '#FFFAFA'; // Snow
+const green = '#009F6B'; // NCS green
+const lightGreen = '#03C03C'; // Dark pastel green
+const cyan = '#20B2AA'; // Light sea green
+const lightCyan = '#00CCCC'; // Robin egg blue
+const blue = '#0087BD'; // NCS blue
+const lightBlue = '#007FFF'; // Azure
+const magenta = '#9A4EAE';
+const pink = '#FF1493'; // Deep pink
+const brown = '#CD853F'; // Peru
+const red = '#C40233'; // NCS red
+const darkRed = '#800020'; // Oxblood
+const lightRed = '#FF2400'; // Scarlet
+const orange = '#EE7F2D'; // Princeton
+const yellow = '#FFD700'; // Gold
+const lightYellow = '#FDFF00'; // Lemon
+
+const background = black;
+
+const colors: ColorScheme = {
+  black,
+  gray,
+  white,
+  lightWhite,
+  green,
+  lightGreen,
+  cyan,
+  lightCyan,
+  blue,
+  lightBlue,
+  magenta,
+  pink,
+  brown,
+  red,
+  darkRed,
+  lightRed,
+  orange,
+  yellow,
+  lightYellow,
+  // UI
+  background,
+  foreground: white,
+  selection: darkRed,
+  selectionText: white,
+  ruler: lighten(background, 0.3),
+  // syntax
+  link: blue,
+  comment: gray
 };
-
-colors.background = colors.black;
-colors.foreground = colors.white;
-colors.selection = colors.darkRed;
-colors.selectionText = colors.white;
-colors.link = colors.blue;
-
-// UI
-colors.ruler = lighten(colors.background, 0.3);
-
-// syntax
-colors.comment = colors.gray;
 
 export default {
   colors,
   name: 'blood-moon'
-};
+} as Template;

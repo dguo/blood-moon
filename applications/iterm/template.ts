@@ -1,8 +1,8 @@
 import * as Color from 'color';
 
-import {templateOutput} from '../../types';
+import {ColorScheme, TemplateOutput} from '../../types';
 
-export function generate(name: string, colors):templateOutput {
+export function generate(name: string, colors: ColorScheme): TemplateOutput {
   const keys = [
     ['Ansi 0 Color', colors.black],
     ['Ansi 1 Color', colors.red],
@@ -47,7 +47,7 @@ export function generate(name: string, colors):templateOutput {
     </dict>`;
   }, '');
 
-  const output = `<?xml version="1.0" encoding="UTF-8"?>
+  const content = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>${body}
@@ -56,6 +56,6 @@ export function generate(name: string, colors):templateOutput {
 
   return {
     fileName: `${name}.itermcolors`,
-    output
+    content
   };
 }
