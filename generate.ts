@@ -11,4 +11,6 @@ applications.forEach(async application => {
   fs.writeFileSync(`./applications/${application}/${fileName}`, content);
 });
 
+(fs as any).copyFileSync('./applications/css/blood-moon.css', './docs/blood-moon.css');
+
 console.log('Complete!');

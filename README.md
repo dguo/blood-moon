@@ -1,5 +1,5 @@
 # Blood Moon (work in progress)
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Lunar_eclipse_September_27_2015_greatest_Alfredo_Garcia_Jr.jpg" width="200">
+<img src="https://github.com/dguo/blood-moon/blob/master/docs/images/blood-moon.png" width="200">
 
 Blood Moon is a [color scheme for code](https://en.wikipedia.org/wiki/Syntax_highlighting).
 I used [Solarized](http://ethanschoonover.com/solarized) dark for several
