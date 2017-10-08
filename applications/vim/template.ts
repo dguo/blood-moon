@@ -53,6 +53,7 @@ hi Comment ${translate(colors.comment)}
 hi Constant ${translate(colors.magenta)}
 hi String ${translate(colors.blue)}
 hi Character ${translate(colors.blue)}
+hi Error ${translate(colors.pink, colors.background)}
 hi Identifier ${translate(colors.red)}
 hi Statement ${translate(colors.green)}
 hi Noise ${translate(colors.green)}
@@ -110,6 +111,9 @@ hi link jsParens jsFuncCall
 hi jsBlockLabel ${translate(colors.foreground)}
 hi link jsVariableDef Identifier
 hi link jsFuncArgs Identifier
+
+" JSON """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link jsonKeyword jsObjectKey
 
 " Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 `;

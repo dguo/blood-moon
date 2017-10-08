@@ -32,6 +32,7 @@ hi Comment guifg=#696969 ctermfg=241
 hi Constant guifg=#9A4EAE ctermfg=139
 hi String guifg=#0087BD ctermfg=38
 hi Character guifg=#0087BD ctermfg=38
+hi Error guifg=#FF1493 ctermfg=199 guibg=#10100E ctermbg=16
 hi Identifier guifg=#C40233 ctermfg=161
 hi Statement guifg=#009F6B ctermfg=36
 hi Noise guifg=#009F6B ctermfg=36
@@ -89,5 +90,8 @@ hi link jsParens jsFuncCall
 hi jsBlockLabel guifg=#C6C6C4 ctermfg=188
 hi link jsVariableDef Identifier
 hi link jsFuncArgs Identifier
+
+" JSON """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link jsonKeyword jsObjectKey
 
 " Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
