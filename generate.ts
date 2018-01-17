@@ -8,7 +8,14 @@ applications.forEach(async application => {
   const {generate} = await import(`./applications/${application}/template`);
   const result: TemplateOutput = generate(scheme.name, scheme.colors);
   const {fileName, content} = result;
-  fs.writeFileSync(`./applications/${application}/${fileName}`, content);
+
+  let destination = `./applications/${application}/`;
+  if (application === 'vim') {
+    destination += 'colors/';
+  }
+  destination += fileName;
+
+  fs.writeFileSync(destination, content);
 });
 
 (fs as any).copyFileSync('./applications/css/blood-moon.css', './docs/blood-moon.css');

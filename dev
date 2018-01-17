@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(prog='./dev')
 subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 
 DOCKER_RUN = ['docker', 'run', '--init', '-it', '--rm', '-v',
-              os.getcwd() + ':/src:cached', '-w=/src', 'node:8.6.0-alpine']
+              os.getcwd() + ':/src:cached', '-w=/src', 'node:8.9.3-alpine']
 
 def start(args, remaining):
     call(DOCKER_RUN + ['yarn', 'install'])
