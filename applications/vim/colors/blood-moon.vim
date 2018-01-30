@@ -46,7 +46,7 @@ hi LineNr guifg=#696969 ctermfg=241
 hi CursorLineNr guifg=#C40233 ctermfg=161
 hi clear CursorLine
 hi ColorColumn guibg=#141412 ctermbg=16
-hi EndOfBuffer guifg=#696969 ctermfg=241
+hi EndOfBuffer guifg=#10100E ctermfg=16
 hi Folded guifg=#10100E ctermfg=16 guibg=#EE7F2D ctermbg=209
 hi clear VertSplit
 hi VertSplit guifg=#C6C6C4 ctermfg=188 guibg=#10100E ctermbg=16

@@ -67,7 +67,7 @@ hi LineNr ${translate(colors.gray)}
 hi CursorLineNr ${translate(colors.red)}
 hi clear CursorLine
 hi ColorColumn ${translate(null, colors.ruler)}
-hi EndOfBuffer ${translate(colors.gray)}
+hi EndOfBuffer ${translate(colors.background)}
 hi Folded ${translate(colors.black, colors.orange)}
 hi clear VertSplit
 hi VertSplit ${translate(colors.foreground, colors.background)}
