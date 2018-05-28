@@ -1,7 +1,7 @@
 # Blood Moon (work in progress)
 <img src="https://github.com/dguo/blood-moon/blob/master/docs/images/blood-moon.png" width="200">
 
-Blood Moon is a [color scheme for code](https://en.wikipedia.org/wiki/Syntax_highlighting).
+[Blood Moon](https://www.blood-moon.dannyguo.com) is a [color scheme for code](https://en.wikipedia.org/wiki/Syntax_highlighting).
 I used [Solarized](http://ethanschoonover.com/solarized) dark for several
 years, but for fun, I decided to create a color scheme that exactly suits my
 personal taste.
