@@ -57,10 +57,10 @@ hi StatusLineNC guifg=#C6C6C4 ctermfg=188 guibg=#800020 ctermbg=125 " not-curren
 hi WildMenu guifg=#800020 ctermfg=125 guibg=#FFFAFA ctermbg=231
 
 " Diffs """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi DiffChange guifg=#10100E ctermfg=16 guibg=#FDFF00 ctermbg=226
-hi DiffText guifg=#10100E ctermfg=16 guibg=#007FFF ctermbg=33
-hi DiffAdd guifg=#10100E ctermfg=16 guibg=#03C03C ctermbg=41
-hi DiffDelete guifg=#10100E ctermfg=16 guibg=#FF2400 ctermbg=202
+hi DiffChange guifg=#FDFF00 ctermfg=226 guibg=#10100E ctermbg=16
+hi DiffText guifg=#007FFF ctermfg=33 guibg=#10100E ctermbg=16
+hi DiffAdd guifg=#03C03C ctermfg=41 guibg=#10100E ctermbg=16
+hi DiffDelete guifg=#FF2400 ctermfg=202 guibg=#10100E ctermbg=16
 
 " Popup menu """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Pmenu guifg=#10100E ctermfg=16 guibg=#FFFAFA ctermbg=231
@@ -68,7 +68,8 @@ hi PmenuSel guifg=#FFFAFA ctermfg=231 guibg=#800020 ctermbg=125
 hi PmenuSbar guibg=#C6C6C4 ctermbg=188
 hi PmenuThumb guibg=#696969 ctermbg=241
 
-" GitGutter """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GitGutter and Signify """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi clear SignColumn
 
 " Shell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

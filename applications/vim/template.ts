@@ -78,10 +78,10 @@ hi StatusLineNC ${translate(colors.white, colors.darkRed)} " not-current windows
 hi WildMenu ${translate(colors.darkRed, colors.lightWhite)}
 
 " Diffs """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi DiffChange ${translate(colors.black, colors.lightYellow)}
-hi DiffText ${translate(colors.black, colors.lightBlue)}
-hi DiffAdd ${translate(colors.black, colors.lightGreen)}
-hi DiffDelete ${translate(colors.black, colors.lightRed)}
+hi DiffChange ${translate(colors.lightYellow, colors.background)}
+hi DiffText ${translate(colors.lightBlue, colors.background)}
+hi DiffAdd ${translate(colors.lightGreen, colors.background)}
+hi DiffDelete ${translate(colors.lightRed, colors.background)}
 
 " Popup menu """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Pmenu ${translate(colors.background, colors.lightWhite)}
@@ -89,7 +89,8 @@ hi PmenuSel ${translate(colors.lightWhite, colors.selection)}
 hi PmenuSbar ${translate(null, colors.foreground)}
 hi PmenuThumb ${translate(null, colors.gray)}
 
-" GitGutter """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GitGutter and Signify """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi clear SignColumn
 
 " Shell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
