@@ -5,6 +5,10 @@ import scheme from './blood-moon';
 
 const applications = fs.readdirSync('./applications');
 applications.forEach(async application => {
+  if (application === '.DS_Store') {
+    return;
+  }
+
   const {generate} = await import(`./applications/${application}/template`);
   const result: TemplateOutput = generate(scheme.name, scheme.colors);
   const {fileName, content} = result;
