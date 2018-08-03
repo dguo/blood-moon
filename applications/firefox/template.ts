@@ -14,8 +14,8 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
     }
   },
   "icons": {
-    "48": "img/logo-48.png",
-    "96": "img/logo-96.png"
+    "48": "icon.png",
+    "96": "icon@2x.png"
   },
   "theme": {
     "colors": {

@@ -1,1 +1,40 @@
-
+{
+  "manifest_version": 2,
+  "name": "Blood Moon",
+  "version": "0.1.0",
+  "author": "Danny Guo",
+  "homepage_url": "https://github.com/dguo/blood-moon",
+  "applications": {
+    "gecko": {
+      "id": "@blood-moon",
+      "strict_min_version": "61.0"
+    }
+  },
+  "icons": {
+    "48": "icon.png",
+    "96": "icon@2x.png"
+  },
+  "theme": {
+    "colors": {
+      "accentcolor": "#10100E",
+      "button_background_active": "#FFFAFA",
+      "button_background_hover": "#FFFAFA",
+      "icons": "#C6C6C4",
+      "icons_attention": "#0087BD",
+      "popup": "#10100E",
+      "popup_highlight": "#800020",
+      "popup_highlight_text": "#C6C6C4",
+      "popup_text": "#C6C6C4",
+      "tab_background_text": "#C6C6C4",
+      "tab_line": "#10100E",
+      "tab_loading": "#C6C6C4",
+      "tab_selected": "#800020",
+      "tab_text": "#C6C6C4",
+      "toolbar": "#800020",
+      "toolbar_field": "#10100E",
+      "toolbar_field_border_focus": "#C40233",
+      "toolbar_field_text": "#C6C6C4",
+      "textcolor": "#C6C6C4"
+    }
+  }
+}
