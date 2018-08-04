@@ -42,6 +42,10 @@ exports.decorateConfig = (config) => {
       .splitpane_divider {
         background-color: rgba(198, 198, 196, 0.5) !important;
       }
+
+      .splitpane_pane > .term_fit:not(.term_active) {
+        opacity: 0.7;
+      }
     `
   });
 }

@@ -55,6 +55,10 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
       .splitpane_divider {
         background-color: ${transparentPaneDivider} !important;
       }
+
+      .splitpane_pane > .term_fit:not(.term_active) {
+        opacity: 0.7;
+      }
     \`
   });
 }
