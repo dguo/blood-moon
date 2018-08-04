@@ -7,6 +7,10 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
   const transparentSelection =
     `rgba(${selection.red()}, ${selection.green()}, ${selection.blue()}, 0.3)`;
 
+  const paneDivider = Color(colors.white);
+  const transparentPaneDivider =
+    `rgba(${paneDivider.red()}, ${paneDivider.green()}, ${paneDivider.blue()}, 0.5)`;
+
   const content = `exports.decorateConfig = (config) => {
   return Object.assign({}, config, {
     cursorColor: '${colors.foreground}',
@@ -49,7 +53,7 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
       }
 
       .splitpane_divider {
-        background-color: ${colors.white} !important;
+        background-color: ${transparentPaneDivider} !important;
       }
     \`
   });
