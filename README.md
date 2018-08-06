@@ -1,15 +1,19 @@
 # Blood Moon (work in progress)
+
 <img src="https://github.com/dguo/blood-moon/blob/master/docs/images/blood-moon.png" width="200">
 
 [Blood Moon](https://www.blood-moon.dannyguo.com) is a [color scheme for code](https://en.wikipedia.org/wiki/Syntax_highlighting).
-I used [Solarized](http://ethanschoonover.com/solarized) dark for several
+I used [Solarized](https://github.com/altercation/solarized) dark for several
 years, but for fun, I decided to create a color scheme that exactly suits my
 personal taste.
 
 It is a work in progress, since I am changing colors and syntax rules as I use
-the scheme myself.
+the scheme myself. However, you can try it out for the supported applications in
+the `applications` folder. Each one should have a README with installation
+instructions.
 
 ## Principles
+
 * Bold
     * I like **bold** colors.
 * Dark
@@ -26,6 +30,7 @@ the scheme myself.
       elements are colored.
 
 ## Alternatives
+
 Here are some alternatives that you might like better. You could also play
 around with [terminal.sexy](https://terminal.sexy/).
 * [Solarized](http://ethanschoonover.com/solarized)
@@ -34,4 +39,5 @@ around with [terminal.sexy](https://terminal.sexy/).
 * [Dracula](https://draculatheme.com/)
 
 ## License
+
 MIT
