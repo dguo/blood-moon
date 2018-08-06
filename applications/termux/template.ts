@@ -21,7 +21,7 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
   ];
 
   const palette = ansi.map((color, index) => {
-    return `color${index}:${color}`;
+    return `color${index}=${color}`;
   }).join('\n');
 
   const content = `# https://github.com/dguo/blood-moon
