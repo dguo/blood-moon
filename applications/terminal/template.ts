@@ -1,4 +1,4 @@
-import * as Case from 'case';
+import Case from 'case';
 
 import {ColorScheme, TemplateOutput} from '../../types';
 import {hexColorToBplistData} from './conversion';

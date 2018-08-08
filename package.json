@@ -24,13 +24,13 @@
     },
     "homepage": "https://github.com/dguo/blood-moon#readme",
     "dependencies": {
-        "@types/color": "2.0.0",
-        "@types/node": "8.0.31",
+        "@types/color": "3.0.0",
+        "@types/node": "10.5.7",
         "case": "1.5.5",
-        "color": "2.0.0",
-        "nodemon": "1.12.1",
-        "ts-node": "3.3.0",
-        "typescript": "2.5.2"
+        "color": "3.0.0",
+        "nodemon": "1.18.3",
+        "ts-node": "7.0.0",
+        "typescript": "3.0.1"
     },
     "devDependencies": {
         "prettier": "1.14.0",

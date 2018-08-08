@@ -34,7 +34,7 @@ SOFTWARE.
 
 */
 
-import * as Color from 'color';
+import Color from 'color';
 
 const bplistParts = [
     Buffer.from(

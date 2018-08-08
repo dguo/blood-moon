@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import fs from 'fs';
 
 import scheme from './blood-moon';
 import {TemplateOutput} from './types';
