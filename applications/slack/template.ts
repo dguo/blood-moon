@@ -1,7 +1,7 @@
 import {ColorScheme, TemplateOutput} from '../../types';
 
 export function generate(name: string, colors: ColorScheme): TemplateOutput {
-  /* Order is:
+    /* Order is:
      Column BG,
      Menu BG Hover,
      Active Item,
@@ -11,19 +11,19 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
      Active Presence,
      Mention Badge
    */
-  const theme = [
-    colors.background,
-    colors.lightWhite,
-    colors.selection,
-    colors.selectionText,
-    colors.lightWhite,
-    colors.foreground,
-    colors.green,
-    colors.yellow
-  ];
+    const theme = [
+        colors.background,
+        colors.lightWhite,
+        colors.selection,
+        colors.selectionText,
+        colors.lightWhite,
+        colors.foreground,
+        colors.green,
+        colors.yellow
+    ];
 
-  return {
-    fileName: `${name}-slack.txt`,
-    content: theme.join(',')
-  };
+    return {
+        fileName: `${name}-slack.txt`,
+        content: theme.join(',')
+    };
 }

@@ -1,6 +1,6 @@
 {
-  "compilerOptions": {
-    "strictNullChecks": true,
-    "target": "ES2017"
-  }
+    "compilerOptions": {
+        "strictNullChecks": true,
+        "target": "ES2017"
+    }
 }

@@ -1,7 +1,7 @@
 import {ColorScheme, TemplateOutput} from '../../types';
 
 export function generate(name: string, colors: ColorScheme): TemplateOutput {
-  const content = `exports.colors = {
+    const content = `exports.colors = {
   dark: {
     accent0: '${colors.red}',
     accent1: '${colors.orange}',
@@ -17,8 +17,8 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
 };
 `;
 
-  return {
-    fileName: `index.js`,
-    content
-  };
+    return {
+        fileName: `index.js`,
+        content
+    };
 }

@@ -1,14 +1,14 @@
 {
-  "name": "hyper-blood-moon",
-  "version": "0.1.0",
-  "description": "Blood Moon theme for Hyper",
-  "keywords": [
-    "hyper",
-    "hyper-theme",
-    "blood-moon"
-  ],
-  "main": "index.js",
-  "repository": "https://github.com/dguo/blood-moon",
-  "author": "Danny Guo",
-  "license": "MIT"
+    "name": "hyper-blood-moon",
+    "version": "0.1.0",
+    "description": "Blood Moon theme for Hyper",
+    "keywords": [
+        "hyper",
+        "hyper-theme",
+        "blood-moon"
+    ],
+    "main": "index.js",
+    "repository": "https://github.com/dguo/blood-moon",
+    "author": "Danny Guo",
+    "license": "MIT"
 }

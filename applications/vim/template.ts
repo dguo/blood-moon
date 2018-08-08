@@ -3,35 +3,35 @@ import * as Color from 'color';
 import {ColorScheme, TemplateOutput} from '../../types';
 
 function translate(fgHex: string | null, bgHex?: string) {
-  const values: string[] = [];
+    const values: string[] = [];
 
-  if (fgHex) {
-    values.push(`guifg=${fgHex}`);
-    values.push(
-      `ctermfg=${
-        Color(fgHex)
-          .ansi256()
-          .object().ansi256
-      }`
-    );
-  }
+    if (fgHex) {
+        values.push(`guifg=${fgHex}`);
+        values.push(
+            `ctermfg=${
+                Color(fgHex)
+                    .ansi256()
+                    .object().ansi256
+            }`
+        );
+    }
 
-  if (bgHex) {
-    values.push(`guibg=${bgHex}`);
-    values.push(
-      `ctermbg=${
-        Color(bgHex)
-          .ansi256()
-          .object().ansi256
-      }`
-    );
-  }
+    if (bgHex) {
+        values.push(`guibg=${bgHex}`);
+        values.push(
+            `ctermbg=${
+                Color(bgHex)
+                    .ansi256()
+                    .object().ansi256
+            }`
+        );
+    }
 
-  return values.join(' ');
+    return values.join(' ');
 }
 
 export function generate(name: string, colors: ColorScheme): TemplateOutput {
-  const content = `" Name: Blood Moon color scheme
+    const content = `" Name: Blood Moon color scheme
 " Maintainer: Danny Guo
 " Description: Dark and bold color scheme
 " URL: https://github.com/dguo/blood-moon
@@ -131,8 +131,8 @@ hi link jsonKeyword jsObjectKey
 " Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 `;
 
-  return {
-    fileName: `${name}.vim`,
-    content
-  };
+    return {
+        fileName: `${name}.vim`,
+        content
+    };
 }

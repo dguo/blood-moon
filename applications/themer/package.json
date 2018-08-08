@@ -1,14 +1,14 @@
 {
-  "name": "themer-colors-blood-moon",
-  "version": "0.1.1",
-  "description": "Blood Moon color set for Themer",
-  "keywords": [
-    "themer",
-    "colors",
-    "blood-moon"
-  ],
-  "main": "index.js",
-  "repository": "https://github.com/dguo/blood-moon",
-  "author": "Danny Guo",
-  "license": "MIT"
+    "name": "themer-colors-blood-moon",
+    "version": "0.1.1",
+    "description": "Blood Moon color set for Themer",
+    "keywords": [
+        "themer",
+        "colors",
+        "blood-moon"
+    ],
+    "main": "index.js",
+    "repository": "https://github.com/dguo/blood-moon",
+    "author": "Danny Guo",
+    "license": "MIT"
 }

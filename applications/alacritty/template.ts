@@ -1,7 +1,7 @@
 import {ColorScheme, TemplateOutput} from '../../types';
 
 export function generate(name: string, colors: ColorScheme): TemplateOutput {
-  const content = `# Colors (Blood Moon)
+    const content = `# Colors (Blood Moon)
 colors:
   # Default colors
   primary:
@@ -31,8 +31,8 @@ colors:
     white:   '0x${colors.lightWhite.substring(1)}'
 `;
 
-  return {
-    fileName: `${name}.yml`,
-    content
-  };
+    return {
+        fileName: `${name}.yml`,
+        content
+    };
 }

@@ -3,7 +3,7 @@ import * as Color from 'color';
 import {ColorScheme, TemplateOutput} from '../../types';
 
 export function generate(name: string, colors: ColorScheme): TemplateOutput {
-  const content = `body {
+    const content = `body {
     color: ${colors.foreground};
     background-color: ${colors.background};
 }
@@ -25,8 +25,8 @@ a, a:hover {
 }
 `;
 
-  return {
-    fileName: `${name}.css`,
-    content
-  };
+    return {
+        fileName: `${name}.css`,
+        content
+    };
 }
