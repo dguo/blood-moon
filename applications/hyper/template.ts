@@ -4,12 +4,10 @@ import {ColorScheme, TemplateOutput} from '../../types';
 
 export function generate(name: string, colors: ColorScheme): TemplateOutput {
   const selection = Color(colors.selection);
-  const transparentSelection =
-    `rgba(${selection.red()}, ${selection.green()}, ${selection.blue()}, 0.3)`;
+  const transparentSelection = `rgba(${selection.red()}, ${selection.green()}, ${selection.blue()}, 0.3)`;
 
   const paneDivider = Color(colors.white);
-  const transparentPaneDivider =
-    `rgba(${paneDivider.red()}, ${paneDivider.green()}, ${paneDivider.blue()}, 0.5)`;
+  const transparentPaneDivider = `rgba(${paneDivider.red()}, ${paneDivider.green()}, ${paneDivider.blue()}, 0.5)`;
 
   const content = `exports.decorateConfig = (config) => {
   return Object.assign({}, config, {

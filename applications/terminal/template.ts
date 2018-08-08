@@ -31,11 +31,14 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
   const body = keys.reduce((output, [key, hex]) => {
     const data = hexColorToBplistData(hex);
 
-    return output + `
+    return (
+      output +
+      `
   <key>${key}</key>
   <data>
     ${data}
-  </data>`;
+  </data>`
+    );
   }, '');
 
   const content = `<?xml version="1.0" encoding="UTF-8"?>

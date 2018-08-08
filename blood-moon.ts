@@ -3,12 +3,19 @@ import * as Color from 'color';
 import {ColorScheme, Template} from './types';
 
 function lighten(hex: string, value: number): string {
-  const rgb = Color(hex).lighten(value).rgb().array();
+  const rgb = Color(hex)
+    .lighten(value)
+    .rgb()
+    .array();
 
-  const lightenedHex = '#' + rgb.map(x => {
-    const xHex = Math.floor(x).toString(16);
-    return xHex.length === 1 ? '0' + xHex : xHex;
-  }).join('');
+  const lightenedHex =
+    '#' +
+    rgb
+      .map(x => {
+        const xHex = Math.floor(x).toString(16);
+        return xHex.length === 1 ? '0' + xHex : xHex;
+      })
+      .join('');
 
   return lightenedHex;
 }

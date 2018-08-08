@@ -1,6 +1,6 @@
 export interface TemplateOutput {
   fileName: string;
-  content: string
+  content: string;
 }
 
 export interface ColorScheme {
@@ -34,5 +34,5 @@ export interface ColorScheme {
 
 export interface Template {
   name: string;
-  colors: ColorScheme
+  colors: ColorScheme;
 }

@@ -7,18 +7,30 @@ function translate(fgHex: string | null, bgHex?: string) {
 
   if (fgHex) {
     values.push(`guifg=${fgHex}`);
-    values.push(`ctermfg=${Color(fgHex).ansi256().object().ansi256}`);
+    values.push(
+      `ctermfg=${
+        Color(fgHex)
+          .ansi256()
+          .object().ansi256
+      }`
+    );
   }
 
   if (bgHex) {
     values.push(`guibg=${bgHex}`);
-    values.push(`ctermbg=${Color(bgHex).ansi256().object().ansi256}`);
+    values.push(
+      `ctermbg=${
+        Color(bgHex)
+          .ansi256()
+          .object().ansi256
+      }`
+    );
   }
 
   return values.join(' ');
 }
 
-export function generate(name:string, colors: ColorScheme): TemplateOutput {
+export function generate(name: string, colors: ColorScheme): TemplateOutput {
   const content = `" Name: Blood Moon color scheme
 " Maintainer: Danny Guo
 " Description: Dark and bold color scheme

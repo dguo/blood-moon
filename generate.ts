@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
-import {TemplateOutput} from './types';
 import scheme from './blood-moon';
+import {TemplateOutput} from './types';
 
 const applications = fs.readdirSync('./applications');
 applications.forEach(async application => {
@@ -22,6 +22,9 @@ applications.forEach(async application => {
   fs.writeFileSync(destination, content);
 });
 
-(fs as any).copyFileSync('./applications/css/blood-moon.css', './docs/blood-moon.css');
+(fs as any).copyFileSync(
+  './applications/css/blood-moon.css',
+  './docs/blood-moon.css'
+);
 
 console.log('Complete!');

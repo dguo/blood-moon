@@ -6,7 +6,9 @@
   "scripts": {
     "generate": "ts-node generate.ts",
     "generate:watch": "nodemon -e ts -x ts-node generate.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"./**/*.{json,ts}\"",
+    "format:check": "prettier --list-different \"./**/*.{json,ts}\"",
+    "lint": "tslint '*.ts' 'applications/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -29,5 +31,15 @@
     "nodemon": "1.12.1",
     "ts-node": "3.3.0",
     "typescript": "2.5.2"
+  },
+  "devDependencies": {
+    "prettier": "1.14.0",
+    "tslint": "5.11.0",
+    "tslint-config-prettier": "1.14.0"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "tabWidth": 2
   }
 }

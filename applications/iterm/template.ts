@@ -33,7 +33,9 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
   const body = keys.reduce((output, [key, hex]) => {
     const color = Color(hex);
 
-    return output + `
+    return (
+      output +
+      `
     <key>${key}</key>
     <dict>
         <key>Blue Component</key>
@@ -44,7 +46,8 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
         <real>${color.green() / 255}</real>
         <key>Red Component</key>
         <real>${color.red() / 255}</real>
-    </dict>`;
+    </dict>`
+    );
   }, '');
 
   const content = `<?xml version="1.0" encoding="UTF-8"?>

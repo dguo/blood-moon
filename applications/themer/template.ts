@@ -15,7 +15,7 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
     shade7: '${colors.foreground}',
   }
 };
-`
+`;
 
   return {
     fileName: `index.js`,

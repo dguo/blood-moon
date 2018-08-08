@@ -1,6 +1,6 @@
 import {ColorScheme, TemplateOutput} from '../../types';
 
-export function generate(name:string, colors: ColorScheme): TemplateOutput {
+export function generate(name: string, colors: ColorScheme): TemplateOutput {
   /* Order is:
      Column BG,
      Menu BG Hover,
