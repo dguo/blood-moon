@@ -10,6 +10,7 @@ import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateSlack from './applications/slack/template';
 import generateTerminal from './applications/terminal/template';
+import generateTerminator from './applications/terminator/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -232,7 +233,26 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         terminalBold: base.terminalBold || bold,
         terminalCursor: base.terminalCursor || cursor,
         terminalText: base.terminalText || selectionText,
-        terminalSelection: base.terminalSelection || selection
+        terminalSelection: base.terminalSelection || selection,
+        // Terminator
+        terminatorBackground: base.terminatorBackground || background,
+        terminatorForeground: base.terminatorForeground || foreground,
+        terminatorBlack: base.terminatorBlack || black,
+        terminatorRed: base.terminatorRed || red,
+        terminatorGreen: base.terminatorGreen || green,
+        terminatorYellow: base.terminatorYellow || yellow,
+        terminatorBlue: base.terminatorBlue || blue,
+        terminatorMagenta: base.terminatorMagenta || magenta,
+        terminatorCyan: base.terminatorCyan || cyan,
+        terminatorWhite: base.terminatorWhite || white,
+        terminatorBrightBlack: base.terminatorBrightBlack || brightBlack,
+        terminatorBrightRed: base.terminatorBrightRed || brightRed,
+        terminatorBrightGreen: base.terminatorBrightGreen || brightGreen,
+        terminatorBrightYellow: base.terminatorBrightYellow || brightYellow,
+        terminatorBrightBlue: base.terminatorBrightBlue || brightBlue,
+        terminatorBrightMagenta: base.terminatorBrightMagenta || brightMagenta,
+        terminatorBrightCyan: base.terminatorBrightCyan || brightCyan,
+        terminatorBrightWhite: base.terminatorBrightWhite || brightWhite
     };
 
     return scheme;
@@ -260,6 +280,12 @@ function generate() {
     fs.writeFileSync(
         `./applications/terminal/${terminal.fileName}`,
         terminal.content
+    );
+
+    const terminator = generateTerminator(bloodMoon.name, scheme);
+    fs.writeFileSync(
+        `./applications/terminator/${terminator.fileName}`,
+        terminator.content
     );
 
     // if (application === 'vim') {

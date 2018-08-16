@@ -1,29 +1,30 @@
-import Color from 'color';
-
 import {ColorScheme, TemplateOutput} from '../../types';
 
-export function generate(name: string, colors: ColorScheme): TemplateOutput {
+export default function generate(
+    name: string,
+    colors: ColorScheme
+): TemplateOutput {
     const ansi = [
-        colors.black,
-        colors.red,
-        colors.green,
-        colors.yellow,
-        colors.blue,
-        colors.magenta,
-        colors.cyan,
-        colors.white,
-        colors.gray,
-        colors.lightRed,
-        colors.lightGreen,
-        colors.lightYellow,
-        colors.lightBlue,
-        colors.pink,
-        colors.lightCyan,
-        colors.lightWhite
+        colors.terminatorBlack,
+        colors.terminatorRed,
+        colors.terminatorGreen,
+        colors.terminatorYellow,
+        colors.terminatorBlue,
+        colors.terminatorMagenta,
+        colors.terminatorCyan,
+        colors.terminatorWhite,
+        colors.terminatorBrightBlack,
+        colors.terminatorBrightRed,
+        colors.terminatorBrightGreen,
+        colors.terminatorBrightYellow,
+        colors.terminatorBrightBlue,
+        colors.terminatorBrightMagenta,
+        colors.terminatorBrightCyan,
+        colors.terminatorBrightWhite
     ];
 
-    const content = `background_color = "${colors.background}"
-foreground_color = "${colors.foreground}"
+    const content = `background_color = "${colors.terminatorBackground}"
+foreground_color = "${colors.terminatorForeground}"
 palette = "${ansi.join(':')}"`;
 
     return {

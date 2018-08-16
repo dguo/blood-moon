@@ -125,7 +125,7 @@ export interface ColorScheme {
     slackActivePresence: string;
     slackMentionBadge: string;
 
-    // terminal
+    // Terminal
     terminalBlack: string;
     terminalRed: string;
     terminalGreen: string;
@@ -147,6 +147,26 @@ export interface ColorScheme {
     terminalCursor: string;
     terminalText: string;
     terminalSelection: string;
+
+    // Terminator
+    terminatorBackground: string;
+    terminatorForeground: string;
+    terminatorBlack: string;
+    terminatorRed: string;
+    terminatorGreen: string;
+    terminatorYellow: string;
+    terminatorBlue: string;
+    terminatorMagenta: string;
+    terminatorCyan: string;
+    terminatorWhite: string;
+    terminatorBrightBlack: string;
+    terminatorBrightRed: string;
+    terminatorBrightGreen: string;
+    terminatorBrightYellow: string;
+    terminatorBrightBlue: string;
+    terminatorBrightMagenta: string;
+    terminatorBrightCyan: string;
+    terminatorBrightWhite: string;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};
