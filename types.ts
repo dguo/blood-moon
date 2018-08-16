@@ -33,6 +33,7 @@ export interface ColorScheme {
     // UI elements
     background: string;
     border: string;
+    cursor: string;
     foreground: string;
     selection: string;
     selectionText: string;
@@ -86,6 +87,32 @@ export interface ColorScheme {
     hyperLightCyan: string;
     hyperLightWhite: string;
     hyperCSS: string;
+
+    // iTerm
+    iTermBlack: string;
+    iTermRed: string;
+    iTermGreen: string;
+    iTermYellow: string;
+    iTermBlue: string;
+    iTermMagenta: string;
+    iTermCyan: string;
+    iTermWhite: string;
+    iTermBrightBlack: string;
+    iTermBrightRed: string;
+    iTermBrightGreen: string;
+    iTermBrightYellow: string;
+    iTermBrightBlue: string;
+    iTermBrightMagenta: string;
+    iTermBrightCyan: string;
+    iTermBrightWhite: string;
+    iTermBackground: string;
+    iTermBadge: string;
+    iTermBold: string;
+    iTermCursor: string;
+    iTermForeground: string;
+    iTermLink: string;
+    iTermSelectionText: string;
+    iTermSelection: string;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};

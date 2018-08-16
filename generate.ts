@@ -7,6 +7,7 @@ import {BaseColorScheme, ColorScheme} from './types';
 
 import generateAlacritty from './applications/alacritty/template';
 import generateHyper from './applications/hyper/template';
+import generateiTerm from './applications/iterm/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -61,6 +62,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
     const background = base.background || black;
     const border = base.border || background;
     const foreground = base.foreground || white;
+    const cursor = base.cursor || foreground;
     const ruler = base.ruler || lighten(background, 0.3);
     const selection = base.selection || darkRed;
     const selectionText = base.selectionText || white;
@@ -118,6 +120,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         pink,
         background,
         border,
+        cursor,
         foreground,
         selection,
         selectionText,
@@ -144,7 +147,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         alacrittyBrightCyan: base.alacrittyBrightCyan || brightCyan,
         alacrittyBrightWhite: base.alacrittyBrightWhite || brightWhite,
         // Hyper
-        hyperCursor: base.hyperCursor || foreground,
+        hyperCursor: base.hyperCursor || cursor,
         hyperCursorAccent: base.hyperCursorAccent || background,
         hyperForeground: base.hyperForeground || foreground,
         hyperBackground: base.hyperBackground || background,
@@ -166,7 +169,32 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         hyperLightMagenta: base.hyperLightMagenta || brightMagenta,
         hyperLightCyan: base.hyperLightCyan || brightCyan,
         hyperLightWhite: base.hyperLightWhite || brightWhite,
-        hyperCSS
+        hyperCSS,
+        // iTerm
+        iTermBlack: base.iTermBlack || black,
+        iTermRed: base.iTermRed || red,
+        iTermGreen: base.iTermGreen || green,
+        iTermYellow: base.iTermYellow || yellow,
+        iTermBlue: base.iTermBlue || blue,
+        iTermMagenta: base.iTermMagenta || magenta,
+        iTermCyan: base.iTermCyan || cyan,
+        iTermWhite: base.iTermWhite || white,
+        iTermBrightBlack: base.iTermBrightBlack || brightBlack,
+        iTermBrightRed: base.iTermBrightRed || brightRed,
+        iTermBrightGreen: base.iTermBrightGreen || brightGreen,
+        iTermBrightYellow: base.iTermBrightYellow || brightYellow,
+        iTermBrightBlue: base.iTermBrightBlue || brightBlue,
+        iTermBrightMagenta: base.iTermBrightMagenta || brightMagenta,
+        iTermBrightCyan: base.iTermBrightCyan || brightCyan,
+        iTermBrightWhite: base.iTermBrightWhite || brightWhite,
+        iTermBackground: base.iTermBackground || background,
+        iTermBadge: base.iTermBadge || red,
+        iTermBold: base.iTermBold || red,
+        iTermCursor: base.iTermCursor || cursor,
+        iTermForeground: base.iTermForeground || foreground,
+        iTermLink: base.iTermLink || link,
+        iTermSelectionText: base.iTermSelectionText || selectionText,
+        iTermSelection: base.iTermSelection || selection
     };
 
     return scheme;
@@ -183,6 +211,9 @@ function generate() {
 
     const hyper = generateHyper(scheme);
     fs.writeFileSync(`./applications/hyper/${hyper.fileName}`, hyper.content);
+
+    const iTerm = generateiTerm(bloodMoon.name, scheme);
+    fs.writeFileSync(`./applications/iterm/${iTerm.fileName}`, iTerm.content);
 
     // if (application === 'vim') {
     // destination += 'colors/';

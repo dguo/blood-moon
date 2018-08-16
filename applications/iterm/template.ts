@@ -2,32 +2,35 @@ import Color from 'color';
 
 import {ColorScheme, TemplateOutput} from '../../types';
 
-export function generate(name: string, colors: ColorScheme): TemplateOutput {
+export default function generate(
+    name: string,
+    colors: ColorScheme
+): TemplateOutput {
     const keys = [
-        ['Ansi 0 Color', colors.black],
-        ['Ansi 1 Color', colors.red],
-        ['Ansi 2 Color', colors.green],
-        ['Ansi 3 Color', colors.yellow],
-        ['Ansi 4 Color', colors.blue],
-        ['Ansi 5 Color', colors.magenta],
-        ['Ansi 6 Color', colors.cyan],
-        ['Ansi 7 Color', colors.white],
-        ['Ansi 8 Color', colors.gray],
-        ['Ansi 9 Color', colors.lightRed],
-        ['Ansi 10 Color', colors.lightGreen],
-        ['Ansi 11 Color', colors.lightYellow],
-        ['Ansi 12 Color', colors.lightBlue],
-        ['Ansi 13 Color', colors.pink],
-        ['Ansi 14 Color', colors.lightCyan],
-        ['Ansi 15 Color', colors.lightWhite],
-        ['Background Color', colors.background],
-        ['Badge Color', colors.red],
-        ['Bold Color', colors.red],
-        ['Cursor Color', colors.white],
-        ['Foreground Color', colors.foreground],
-        ['Link Color', colors.link],
-        ['Selected Text Color', colors.selectionText],
-        ['Selection Color', colors.selection]
+        ['Ansi 0 Color', colors.iTermBlack],
+        ['Ansi 1 Color', colors.iTermRed],
+        ['Ansi 2 Color', colors.iTermGreen],
+        ['Ansi 3 Color', colors.iTermYellow],
+        ['Ansi 4 Color', colors.iTermBlue],
+        ['Ansi 5 Color', colors.iTermMagenta],
+        ['Ansi 6 Color', colors.iTermCyan],
+        ['Ansi 7 Color', colors.iTermWhite],
+        ['Ansi 8 Color', colors.iTermBrightBlack],
+        ['Ansi 9 Color', colors.iTermBrightRed],
+        ['Ansi 10 Color', colors.iTermBrightGreen],
+        ['Ansi 11 Color', colors.iTermBrightYellow],
+        ['Ansi 12 Color', colors.iTermBrightBlue],
+        ['Ansi 13 Color', colors.iTermBrightMagenta],
+        ['Ansi 14 Color', colors.iTermBrightCyan],
+        ['Ansi 15 Color', colors.iTermBrightWhite],
+        ['Background Color', colors.iTermBackground],
+        ['Badge Color', colors.iTermRed],
+        ['Bold Color', colors.iTermRed],
+        ['Cursor Color', colors.iTermWhite],
+        ['Foreground Color', colors.iTermForeground],
+        ['Link Color', colors.iTermLink],
+        ['Selected Text Color', colors.iTermSelectionText],
+        ['Selection Color', colors.iTermSelection]
     ];
 
     const body = keys.reduce((output, [key, hex]) => {
