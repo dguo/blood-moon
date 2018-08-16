@@ -2,9 +2,11 @@ import fs from 'fs';
 
 import Color from 'color';
 
-import {BaseColorScheme, ColorScheme} from './types';
 import bloodMoon from './blood-moon';
+import {BaseColorScheme, ColorScheme} from './types';
+
 import generateAlacritty from './applications/alacritty/template';
+import generateHyper from './applications/hyper/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -22,6 +24,11 @@ function lighten(hex: string, value: number): string {
             .join('');
 
     return lightenedHex;
+}
+
+function transparent(hex: string, value: number): string {
+    const color = Color(hex);
+    return `rgba(${color.red()}, ${color.green()}, ${color.blue()}, ${value})`;
 }
 
 function getColorScheme(base: BaseColorScheme): ColorScheme {
@@ -52,14 +59,40 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
 
     // UI elements
     const background = base.background || black;
+    const border = base.border || background;
     const foreground = base.foreground || white;
-    const link = base.link || blue;
     const ruler = base.ruler || lighten(background, 0.3);
     const selection = base.selection || darkRed;
     const selectionText = base.selectionText || white;
 
     // syntax
     const comment = base.comment || gray;
+    const link = base.link || blue;
+
+    const hyperSelection = base.hyperSelection || transparent(selection, 0.3);
+    const hyperWhite = base.hyperWhite || white;
+    const hyperCSS =
+        base.hyperCSS ||
+        `.tab_tab {
+        border-bottom-color: ${hyperSelection} !important;
+        border-bottom-width: 2px;
+      }
+
+      .tab_tab:not(.tab_active) {
+        opacity: 0.6;
+      }
+
+      .tab_tab.tab_active {
+        border-bottom-color: ${selection} !important;
+      }
+
+      .splitpane_divider {
+        background-color: ${transparent(hyperWhite, 0.5)} !important;
+      }
+
+      .splitpane_pane > .term_fit:not(.term_active) {
+        opacity: 0.7;
+      }`;
 
     const scheme = {
         black,
@@ -84,6 +117,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         orange,
         pink,
         background,
+        border,
         foreground,
         selection,
         selectionText,
@@ -108,7 +142,31 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         alacrittyBrightBlue: base.alacrittyBrightBlue || brightBlue,
         alacrittyBrightMagenta: base.alacrittyBrightMagenta || brightMagenta,
         alacrittyBrightCyan: base.alacrittyBrightCyan || brightCyan,
-        alacrittyBrightWhite: base.alacrittyBrightWhite || brightWhite
+        alacrittyBrightWhite: base.alacrittyBrightWhite || brightWhite,
+        // Hyper
+        hyperCursor: base.hyperCursor || foreground,
+        hyperCursorAccent: base.hyperCursorAccent || background,
+        hyperForeground: base.hyperForeground || foreground,
+        hyperBackground: base.hyperBackground || background,
+        hyperSelection,
+        hyperBorder: base.hyperBorder || border,
+        hyperBlack: base.hyperBlack || black,
+        hyperRed: base.hyperRed || red,
+        hyperGreen: base.hyperGreen || green,
+        hyperYellow: base.hyperYellow || yellow,
+        hyperBlue: base.hyperBlue || blue,
+        hyperMagenta: base.hyperMagenta || magenta,
+        hyperCyan: base.hyperCyan || cyan,
+        hyperWhite,
+        hyperLightBlack: base.hyperLightBlack || brightBlack,
+        hyperLightRed: base.hyperLightRed || brightRed,
+        hyperLightGreen: base.hyperLightGreen || brightGreen,
+        hyperLightYellow: base.hyperLightYellow || brightYellow,
+        hyperLightBlue: base.hyperLightBlue || brightBlue,
+        hyperLightMagenta: base.hyperLightMagenta || brightMagenta,
+        hyperLightCyan: base.hyperLightCyan || brightCyan,
+        hyperLightWhite: base.hyperLightWhite || brightWhite,
+        hyperCSS
     };
 
     return scheme;
@@ -116,11 +174,15 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
 
 function generate() {
     const scheme = getColorScheme(bloodMoon.colors);
+
     const alacritty = generateAlacritty(bloodMoon.name, scheme);
     fs.writeFileSync(
         `./applications/alacritty/${alacritty.fileName}`,
         alacritty.content
     );
+
+    const hyper = generateHyper(scheme);
+    fs.writeFileSync(`./applications/hyper/${hyper.fileName}`, hyper.content);
 
     // if (application === 'vim') {
     // destination += 'colors/';

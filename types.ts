@@ -32,14 +32,15 @@ export interface ColorScheme {
 
     // UI elements
     background: string;
+    border: string;
     foreground: string;
     selection: string;
     selectionText: string;
-    link: string;
     ruler: string;
 
     // syntax
     comment: string;
+    link: string;
 
     // Alacritty
     alacrittyBackground: string;
@@ -60,6 +61,31 @@ export interface ColorScheme {
     alacrittyBrightMagenta: string;
     alacrittyBrightCyan: string;
     alacrittyBrightWhite: string;
+
+    // Hyper
+    hyperCursor: string;
+    hyperCursorAccent: string;
+    hyperForeground: string;
+    hyperBackground: string;
+    hyperSelection: string;
+    hyperBorder: string;
+    hyperBlack: string;
+    hyperRed: string;
+    hyperGreen: string;
+    hyperYellow: string;
+    hyperBlue: string;
+    hyperMagenta: string;
+    hyperCyan: string;
+    hyperWhite: string;
+    hyperLightBlack: string;
+    hyperLightRed: string;
+    hyperLightGreen: string;
+    hyperLightYellow: string;
+    hyperLightBlue: string;
+    hyperLightMagenta: string;
+    hyperLightCyan: string;
+    hyperLightWhite: string;
+    hyperCSS: string;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};
