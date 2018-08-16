@@ -26,7 +26,6 @@
     "dependencies": {
         "@types/color": "3.0.0",
         "@types/node": "10.5.7",
-        "case": "1.5.5",
         "change-case": "3.0.2",
         "color": "3.0.0",
         "nodemon": "1.18.3",

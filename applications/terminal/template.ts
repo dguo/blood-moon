@@ -1,31 +1,34 @@
-import Case from 'case';
+import {titleCase} from 'change-case';
 
 import {ColorScheme, TemplateOutput} from '../../types';
 import {hexColorToBplistData} from './conversion';
 
-export function generate(name: string, colors: ColorScheme): TemplateOutput {
+export default function generate(
+    name: string,
+    colors: ColorScheme
+): TemplateOutput {
     const keys = [
-        ['ANSIBlackColor', colors.black],
-        ['ANSIRedColor', colors.red],
-        ['ANSIGreenColor', colors.green],
-        ['ANSIYellowColor', colors.yellow],
-        ['ANSIBlueColor', colors.blue],
-        ['ANSIMagentaColor', colors.magenta],
-        ['ANSICyanColor', colors.cyan],
-        ['ANSIWhiteColor', colors.white],
-        ['ANSIBrightBlackColor', colors.gray],
-        ['ANSIBrightRedColor', colors.lightRed],
-        ['ANSIBrightGreenColor', colors.lightGreen],
-        ['ANSIBrightYellowColor', colors.lightYellow],
-        ['ANSIBrightBlueColor', colors.lightBlue],
-        ['ANSIBrightMagentaColor', colors.pink],
-        ['ANSIBrightCyanColor', colors.lightCyan],
-        ['ANSIBrightWhiteColor', colors.lightWhite],
-        ['BackgroundColor', colors.background],
-        ['TextBoldColor', colors.red],
-        ['CursorColor', colors.foreground],
-        ['TextColor', colors.foreground],
-        ['SelectionColor', colors.selection]
+        ['ANSIBlackColor', colors.terminalBlack],
+        ['ANSIRedColor', colors.terminalRed],
+        ['ANSIGreenColor', colors.terminalGreen],
+        ['ANSIYellowColor', colors.terminalYellow],
+        ['ANSIBlueColor', colors.terminalBlue],
+        ['ANSIMagentaColor', colors.terminalMagenta],
+        ['ANSICyanColor', colors.terminalCyan],
+        ['ANSIWhiteColor', colors.terminalWhite],
+        ['ANSIBrightBlackColor', colors.terminalBrightBlack],
+        ['ANSIBrightRedColor', colors.terminalBrightRed],
+        ['ANSIBrightGreenColor', colors.terminalBrightGreen],
+        ['ANSIBrightYellowColor', colors.terminalBrightYellow],
+        ['ANSIBrightBlueColor', colors.terminalBrightBlue],
+        ['ANSIBrightMagentaColor', colors.terminalBrightMagenta],
+        ['ANSIBrightCyanColor', colors.terminalBrightCyan],
+        ['ANSIBrightWhiteColor', colors.terminalBrightWhite],
+        ['BackgroundColor', colors.terminalBackground],
+        ['TextBoldColor', colors.terminalRed],
+        ['CursorColor', colors.terminalCursor],
+        ['TextColor', colors.terminalText],
+        ['SelectionColor', colors.terminalSelection]
     ];
 
     const body = keys.reduce((output, [key, hex]) => {
@@ -50,7 +53,7 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
   <key>FontAntialias</key>
   <true/>${body}
   <key>name</key>
-  <string>${Case.capital(name)}</string>
+  <string>${titleCase(name)}</string>
   <key>type</key>
   <string>Window Settings</string>
 </dict>
@@ -58,7 +61,7 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
 `;
 
     return {
-        fileName: `${Case.capital(name)}.terminal`,
+        fileName: `${titleCase(name)}.terminal`,
         content
     };
 }

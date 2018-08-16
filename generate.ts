@@ -8,6 +8,8 @@ import {BaseColorScheme, ColorScheme} from './types';
 import generateAlacritty from './applications/alacritty/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
+import generateSlack from './applications/slack/template';
+import generateTerminal from './applications/terminal/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -60,6 +62,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
 
     // UI elements
     const background = base.background || black;
+    const bold = base.bold || red;
     const border = base.border || background;
     const foreground = base.foreground || white;
     const cursor = base.cursor || foreground;
@@ -113,17 +116,21 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         brightMagenta,
         brightCyan,
         brightWhite,
+        // other colors
         brown,
         darkRed,
         gray,
         orange,
         pink,
+        // UI elements
         background,
+        bold,
         border,
         cursor,
         foreground,
         selection,
         selectionText,
+        // syntax
         link,
         ruler,
         comment,
@@ -189,7 +196,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         iTermBrightWhite: base.iTermBrightWhite || brightWhite,
         iTermBackground: base.iTermBackground || background,
         iTermBadge: base.iTermBadge || red,
-        iTermBold: base.iTermBold || red,
+        iTermBold: base.iTermBold || bold,
         iTermCursor: base.iTermCursor || cursor,
         iTermForeground: base.iTermForeground || foreground,
         iTermLink: base.iTermLink || link,
@@ -203,7 +210,29 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         slackHoverItem: base.slackHoverItem || brightWhite,
         slackText: base.slackText || foreground,
         slackActivePresence: base.slackActivePresence || green,
-        slackMentionBadge: base.slackMentionBadge || yellow
+        slackMentionBadge: base.slackMentionBadge || yellow,
+        // Terminal
+        terminalBlack: base.terminalBlack || black,
+        terminalRed: base.terminalRed || red,
+        terminalGreen: base.terminalGreen || green,
+        terminalYellow: base.terminalYellow || yellow,
+        terminalBlue: base.terminalBlue || blue,
+        terminalMagenta: base.terminalMagenta || magenta,
+        terminalCyan: base.terminalCyan || cyan,
+        terminalWhite: base.terminalWhite || white,
+        terminalBrightBlack: base.terminalBrightBlack || brightBlack,
+        terminalBrightRed: base.terminalBrightRed || brightRed,
+        terminalBrightGreen: base.terminalBrightGreen || brightGreen,
+        terminalBrightYellow: base.terminalBrightYellow || brightYellow,
+        terminalBrightBlue: base.terminalBrightBlue || brightBlue,
+        terminalBrightMagenta: base.terminalBrightMagenta || brightMagenta,
+        terminalBrightCyan: base.terminalBrightCyan || brightCyan,
+        terminalBrightWhite: base.terminalBrightWhite || brightWhite,
+        terminalBackground: base.terminalBackground || background,
+        terminalBold: base.terminalBold || bold,
+        terminalCursor: base.terminalCursor || cursor,
+        terminalText: base.terminalText || selectionText,
+        terminalSelection: base.terminalSelection || selection
     };
 
     return scheme;
@@ -223,6 +252,15 @@ function generate() {
 
     const iTerm = generateiTerm(bloodMoon.name, scheme);
     fs.writeFileSync(`./applications/iterm/${iTerm.fileName}`, iTerm.content);
+
+    const slack = generateSlack(bloodMoon.name, scheme);
+    fs.writeFileSync(`./applications/slack/${slack.fileName}`, slack.content);
+
+    const terminal = generateTerminal(bloodMoon.name, scheme);
+    fs.writeFileSync(
+        `./applications/terminal/${terminal.fileName}`,
+        terminal.content
+    );
 
     // if (application === 'vim') {
     // destination += 'colors/';

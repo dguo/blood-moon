@@ -32,6 +32,7 @@ export interface ColorScheme {
 
     // UI elements
     background: string;
+    bold: string;
     border: string;
     cursor: string;
     foreground: string;
@@ -123,6 +124,29 @@ export interface ColorScheme {
     slackText: string;
     slackActivePresence: string;
     slackMentionBadge: string;
+
+    // terminal
+    terminalBlack: string;
+    terminalRed: string;
+    terminalGreen: string;
+    terminalYellow: string;
+    terminalBlue: string;
+    terminalMagenta: string;
+    terminalCyan: string;
+    terminalWhite: string;
+    terminalBrightBlack: string;
+    terminalBrightRed: string;
+    terminalBrightGreen: string;
+    terminalBrightYellow: string;
+    terminalBrightBlue: string;
+    terminalBrightMagenta: string;
+    terminalBrightCyan: string;
+    terminalBrightWhite: string;
+    terminalBackground: string;
+    terminalBold: string;
+    terminalCursor: string;
+    terminalText: string;
+    terminalSelection: string;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};
