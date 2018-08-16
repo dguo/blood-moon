@@ -194,7 +194,16 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         iTermForeground: base.iTermForeground || foreground,
         iTermLink: base.iTermLink || link,
         iTermSelectionText: base.iTermSelectionText || selectionText,
-        iTermSelection: base.iTermSelection || selection
+        iTermSelection: base.iTermSelection || selection,
+        // Slack
+        slackColumnBackground: base.slackColumnBackground || background,
+        slackMenuBackgroundHover: base.slackMenuBackgroundHover || brightWhite,
+        slackActiveItem: base.slackActiveItem || selection,
+        slackActiveItemText: base.slackActiveItemText || selectionText,
+        slackHoverItem: base.slackHoverItem || brightWhite,
+        slackText: base.slackText || foreground,
+        slackActivePresence: base.slackActivePresence || green,
+        slackMentionBadge: base.slackMentionBadge || yellow
     };
 
     return scheme;

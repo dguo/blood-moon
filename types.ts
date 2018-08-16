@@ -113,6 +113,16 @@ export interface ColorScheme {
     iTermLink: string;
     iTermSelectionText: string;
     iTermSelection: string;
+
+    // Slack
+    slackColumnBackground: string;
+    slackMenuBackgroundHover: string;
+    slackActiveItem: string;
+    slackActiveItemText: string;
+    slackHoverItem: string;
+    slackText: string;
+    slackActivePresence: string;
+    slackMentionBadge: string;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};
