@@ -1,30 +1,136 @@
 import fs from 'fs';
 
-import scheme from './blood-moon';
-import {TemplateOutput} from './types';
+import Color from 'color';
 
-const applications = fs.readdirSync('./applications');
-applications.forEach(async application => {
-    if (application === '.DS_Store') {
-        return;
-    }
+import {BaseColorScheme, ColorScheme} from './types';
+import bloodMoon from './blood-moon';
+import generateAlacritty from './applications/alacritty/template';
 
-    const {generate} = await import(`./applications/${application}/template`);
-    const result: TemplateOutput = generate(scheme.name, scheme.colors);
-    const {fileName, content} = result;
+function lighten(hex: string, value: number): string {
+    const rgb = Color(hex)
+        .lighten(value)
+        .rgb()
+        .array();
 
-    let destination = `./applications/${application}/`;
-    if (application === 'vim') {
-        destination += 'colors/';
-    }
-    destination += fileName;
+    const lightenedHex =
+        '#' +
+        rgb
+            .map(x => {
+                const xHex = Math.floor(x).toString(16);
+                return xHex.length === 1 ? '0' + xHex : xHex;
+            })
+            .join('');
 
-    fs.writeFileSync(destination, content);
-});
+    return lightenedHex;
+}
 
-(fs as any).copyFileSync(
-    './applications/css/blood-moon.css',
-    './docs/blood-moon.css'
-);
+function getColorScheme(base: BaseColorScheme): ColorScheme {
+    // ANSI colors
+    const black = base.black || '#10100E';
+    const red = base.red || '#C40233'; // NCS red
+    const green = base.green || '#009F6B'; // NCS green
+    const yellow = base.yellow || '#FFD700'; // Gold
+    const blue = base.blue || '#0087BD'; // NCS blue
+    const magenta = base.magenta || '#9A4EAE';
+    const cyan = base.cyan || '#20B2AA'; // Bright sea green
+    const white = base.white || '#C6C6C4';
+    const brightBlack = base.brightBlack || '#696969'; // Dim gray
+    const brightRed = base.brightRed || '#FF2400'; // Scarlet
+    const brightGreen = base.brightGreen || '#03C03C'; // Dark pastel green
+    const brightYellow = base.brightYellow || '#FDFF00'; // Lemon
+    const brightBlue = base.brightBlue || '#007FFF'; // Azure
+    const brightMagenta = base.brightMagenta || '#FF1493'; // Deep pink
+    const brightCyan = base.brightCyan || '#00CCCC'; // Robin egg blue
+    const brightWhite = base.brightWhite || '#FFFAFA'; // Snow
 
-console.log('Complete!');
+    // other colors
+    const brown = base.brown || '#CD853F'; // Peru
+    const darkRed = base.darkRed || '#800020'; // Oxblood
+    const gray = base.gray || '#696969'; // Dim gray
+    const orange = base.orange || '#EE7F2D'; // Princeton
+    const pink = base.pink || '#FF1493'; // Deep pink
+
+    // UI elements
+    const background = base.background || black;
+    const foreground = base.foreground || white;
+    const link = base.link || blue;
+    const ruler = base.ruler || lighten(background, 0.3);
+    const selection = base.selection || darkRed;
+    const selectionText = base.selectionText || white;
+
+    // syntax
+    const comment = base.comment || gray;
+
+    const scheme = {
+        black,
+        red,
+        green,
+        yellow,
+        blue,
+        magenta,
+        cyan,
+        white,
+        brightBlack,
+        brightRed,
+        brightGreen,
+        brightYellow,
+        brightBlue,
+        brightMagenta,
+        brightCyan,
+        brightWhite,
+        brown,
+        darkRed,
+        gray,
+        orange,
+        pink,
+        background,
+        foreground,
+        selection,
+        selectionText,
+        link,
+        ruler,
+        comment,
+        // Alacritty
+        alacrittyBackground: base.alacrittyBackground || background,
+        alacrittyForeground: base.alacrittyForeground || foreground,
+        alacrittyBlack: base.alacrittyBlack || black,
+        alacrittyRed: base.alacrittyRed || red,
+        alacrittyGreen: base.alacrittyGreen || green,
+        alacrittyYellow: base.alacrittyYellow || yellow,
+        alacrittyBlue: base.alacrittyBlue || blue,
+        alacrittyMagenta: base.alacrittyMagenta || magenta,
+        alacrittyCyan: base.alacrittyCyan || cyan,
+        alacrittyWhite: base.alacrittyWhite || white,
+        alacrittyBrightBlack: base.alacrittyBrightBlack || brightBlack,
+        alacrittyBrightRed: base.alacrittyBrightRed || brightRed,
+        alacrittyBrightGreen: base.alacrittyBrightGreen || brightGreen,
+        alacrittyBrightYellow: base.alacrittyBrightYellow || brightYellow,
+        alacrittyBrightBlue: base.alacrittyBrightBlue || brightBlue,
+        alacrittyBrightMagenta: base.alacrittyBrightMagenta || brightMagenta,
+        alacrittyBrightCyan: base.alacrittyBrightCyan || brightCyan,
+        alacrittyBrightWhite: base.alacrittyBrightWhite || brightWhite
+    };
+
+    return scheme;
+}
+
+function generate() {
+    const scheme = getColorScheme(bloodMoon.colors);
+    const alacritty = generateAlacritty(bloodMoon.name, scheme);
+    fs.writeFileSync(
+        `./applications/alacritty/${alacritty.fileName}`,
+        alacritty.content
+    );
+
+    // if (application === 'vim') {
+    // destination += 'colors/';
+
+    // (fs as any).copyFileSync(
+    // './applications/css/blood-moon.css',
+    // './docs/blood-moon.css'
+    // );
+
+    console.log('Complete!');
+}
+
+generate();
