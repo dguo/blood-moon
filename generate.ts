@@ -11,6 +11,7 @@ import generateiTerm from './applications/iterm/template';
 import generateSlack from './applications/slack/template';
 import generateTerminal from './applications/terminal/template';
 import generateTerminator from './applications/terminator/template';
+import generateTermux from './applications/termux/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -252,7 +253,26 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         terminatorBrightBlue: base.terminatorBrightBlue || brightBlue,
         terminatorBrightMagenta: base.terminatorBrightMagenta || brightMagenta,
         terminatorBrightCyan: base.terminatorBrightCyan || brightCyan,
-        terminatorBrightWhite: base.terminatorBrightWhite || brightWhite
+        terminatorBrightWhite: base.terminatorBrightWhite || brightWhite,
+        // Termux
+        termuxBackground: base.termuxBackground || background,
+        termuxForeground: base.termuxForeground || foreground,
+        termuxBlack: base.termuxBlack || black,
+        termuxRed: base.termuxRed || red,
+        termuxGreen: base.termuxGreen || green,
+        termuxYellow: base.termuxYellow || yellow,
+        termuxBlue: base.termuxBlue || blue,
+        termuxMagenta: base.termuxMagenta || magenta,
+        termuxCyan: base.termuxCyan || cyan,
+        termuxWhite: base.termuxWhite || white,
+        termuxBrightBlack: base.termuxBrightBlack || brightBlack,
+        termuxBrightRed: base.termuxBrightRed || brightRed,
+        termuxBrightGreen: base.termuxBrightGreen || brightGreen,
+        termuxBrightYellow: base.termuxBrightYellow || brightYellow,
+        termuxBrightBlue: base.termuxBrightBlue || brightBlue,
+        termuxBrightMagenta: base.termuxBrightMagenta || brightMagenta,
+        termuxBrightCyan: base.termuxBrightCyan || brightCyan,
+        termuxBrightWhite: base.termuxBrightWhite || brightWhite
     };
 
     return scheme;
@@ -286,6 +306,12 @@ function generate() {
     fs.writeFileSync(
         `./applications/terminator/${terminator.fileName}`,
         terminator.content
+    );
+
+    const termux = generateTermux(bloodMoon.name, scheme);
+    fs.writeFileSync(
+        `./applications/termux/${termux.fileName}`,
+        termux.content
     );
 
     // if (application === 'vim') {

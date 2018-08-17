@@ -1,23 +1,26 @@
 import {ColorScheme, TemplateOutput} from '../../types';
 
-export function generate(name: string, colors: ColorScheme): TemplateOutput {
+export default function generate(
+    name: string,
+    colors: ColorScheme
+): TemplateOutput {
     const ansi = [
-        colors.black,
-        colors.red,
-        colors.green,
-        colors.yellow,
-        colors.blue,
-        colors.magenta,
-        colors.cyan,
-        colors.white,
-        colors.gray,
-        colors.lightRed,
-        colors.lightGreen,
-        colors.lightYellow,
-        colors.lightBlue,
-        colors.pink,
-        colors.lightCyan,
-        colors.lightWhite
+        colors.termuxBlack,
+        colors.termuxRed,
+        colors.termuxGreen,
+        colors.termuxYellow,
+        colors.termuxBlue,
+        colors.termuxMagenta,
+        colors.termuxCyan,
+        colors.termuxWhite,
+        colors.termuxBrightBlack,
+        colors.termuxBrightRed,
+        colors.termuxBrightGreen,
+        colors.termuxBrightYellow,
+        colors.termuxBrightBlue,
+        colors.termuxBrightMagenta,
+        colors.termuxBrightCyan,
+        colors.termuxBrightWhite
     ];
 
     const palette = ansi
@@ -27,8 +30,8 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
         .join('\n');
 
     const content = `# https://github.com/dguo/blood-moon
-background=${colors.background}
-foreground=${colors.foreground}
+background=${colors.termuxBackground}
+foreground=${colors.termuxForeground}
 ${palette}`;
 
     return {

@@ -167,6 +167,26 @@ export interface ColorScheme {
     terminatorBrightMagenta: string;
     terminatorBrightCyan: string;
     terminatorBrightWhite: string;
+
+    // Termux
+    termuxBackground: string;
+    termuxForeground: string;
+    termuxBlack: string;
+    termuxRed: string;
+    termuxGreen: string;
+    termuxYellow: string;
+    termuxBlue: string;
+    termuxMagenta: string;
+    termuxCyan: string;
+    termuxWhite: string;
+    termuxBrightBlack: string;
+    termuxBrightRed: string;
+    termuxBrightGreen: string;
+    termuxBrightYellow: string;
+    termuxBrightBlue: string;
+    termuxBrightMagenta: string;
+    termuxBrightCyan: string;
+    termuxBrightWhite: string;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};
