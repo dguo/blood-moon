@@ -12,6 +12,7 @@ import generateSlack from './applications/slack/template';
 import generateTerminal from './applications/terminal/template';
 import generateTerminator from './applications/terminator/template';
 import generateTermux from './applications/termux/template';
+import generateThemer from './applications/themer/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -272,7 +273,24 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         termuxBrightBlue: base.termuxBrightBlue || brightBlue,
         termuxBrightMagenta: base.termuxBrightMagenta || brightMagenta,
         termuxBrightCyan: base.termuxBrightCyan || brightCyan,
-        termuxBrightWhite: base.termuxBrightWhite || brightWhite
+        termuxBrightWhite: base.termuxBrightWhite || brightWhite,
+        // Themer
+        themerAccent0: base.themerAccent0 || red,
+        themerAccent1: base.themerAccent1 || orange,
+        themerAccent2: base.themerAccent2 || yellow,
+        themerAccent3: base.themerAccent3 || green,
+        themerAccent4: base.themerAccent4 || cyan,
+        themerAccent5: base.themerAccent5 || blue,
+        themerAccent6: base.themerAccent6 || magenta,
+        themerAccent7: base.themerAccent7 || pink,
+        themerShade0: base.themerShade0 || background,
+        themerShade1: base.themerShade1,
+        themerShade2: base.themerShade2,
+        themerShade3: base.themerShade3,
+        themerShade4: base.themerShade4,
+        themerShade5: base.themerShade5,
+        themerShade6: base.themerShade6,
+        themerShade7: base.themerShade7 || foreground
     };
 
     return scheme;
@@ -312,6 +330,12 @@ function generate() {
     fs.writeFileSync(
         `./applications/termux/${termux.fileName}`,
         termux.content
+    );
+
+    const themer = generateThemer(scheme);
+    fs.writeFileSync(
+        `./applications/themer/${themer.fileName}`,
+        themer.content
     );
 
     // if (application === 'vim') {

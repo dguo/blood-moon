@@ -187,6 +187,24 @@ export interface ColorScheme {
     termuxBrightMagenta: string;
     termuxBrightCyan: string;
     termuxBrightWhite: string;
+
+    // Themer
+    themerAccent0: string;
+    themerAccent1: string;
+    themerAccent2: string;
+    themerAccent3: string;
+    themerAccent4: string;
+    themerAccent5: string;
+    themerAccent6: string;
+    themerAccent7: string;
+    themerShade0: string;
+    themerShade1?: string;
+    themerShade2?: string;
+    themerShade3?: string;
+    themerShade4?: string;
+    themerShade5?: string;
+    themerShade6?: string;
+    themerShade7: string;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};

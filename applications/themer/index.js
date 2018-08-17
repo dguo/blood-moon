@@ -9,6 +9,6 @@ exports.colors = {
     accent6: '#9A4EAE',
     accent7: '#FF1493',
     shade0: '#10100E',
-    shade7: '#C6C6C4',
+    shade7: '#C6C6C4'
   }
 };
