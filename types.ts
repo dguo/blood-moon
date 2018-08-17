@@ -64,6 +64,14 @@ export interface ColorScheme {
     alacrittyBrightCyan: string;
     alacrittyBrightWhite: string;
 
+    // CSS
+    cssForeground: string;
+    cssBackground: string;
+    cssH1: string;
+    cssH2: string;
+    cssI: string;
+    cssA: string;
+
     // Hyper
     hyperCursor: string;
     hyperCursorAccent: string;

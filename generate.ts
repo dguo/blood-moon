@@ -6,6 +6,7 @@ import bloodMoon from './blood-moon';
 import {BaseColorScheme, ColorScheme} from './types';
 
 import generateAlacritty from './applications/alacritty/template';
+import generateCSS from './applications/css/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateSlack from './applications/slack/template';
@@ -156,6 +157,13 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         alacrittyBrightMagenta: base.alacrittyBrightMagenta || brightMagenta,
         alacrittyBrightCyan: base.alacrittyBrightCyan || brightCyan,
         alacrittyBrightWhite: base.alacrittyBrightWhite || brightWhite,
+        // CSS
+        cssForeground: base.cssForeground || foreground,
+        cssBackground: base.cssBackground || background,
+        cssH1: base.cssH1 || red,
+        cssH2: base.cssH2 || green,
+        cssI: base.cssI || red,
+        cssA: base.cssA || link,
         // Hyper
         hyperCursor: base.hyperCursor || cursor,
         hyperCursorAccent: base.hyperCursorAccent || background,
@@ -337,6 +345,10 @@ function generate() {
         `./applications/themer/${themer.fileName}`,
         themer.content
     );
+
+    const css = generateCSS(bloodMoon.name, scheme);
+    fs.writeFileSync(`./applications/css/${css.fileName}`, css.content);
+    fs.writeFileSync(`./docs/${bloodMoon.name}.css`, css.content);
 
     // if (application === 'vim') {
     // destination += 'colors/';
