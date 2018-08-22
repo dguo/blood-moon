@@ -14,6 +14,7 @@ import generateTerminal from './applications/terminal/template';
 import generateTerminator from './applications/terminator/template';
 import generateTermux from './applications/termux/template';
 import generateThemer from './applications/themer/template';
+import generateVim from './applications/vim/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -298,7 +299,56 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         themerShade4: base.themerShade4,
         themerShade5: base.themerShade5,
         themerShade6: base.themerShade6,
-        themerShade7: base.themerShade7 || foreground
+        themerShade7: base.themerShade7 || foreground,
+        // Vim
+        vimBackground: base.vimBackground || 'dark',
+        vimNormal: base.vimNormal || [foreground, background],
+        vimIncSearch: base.vimIncSearch || [selectionText, selection],
+        vimMatchParen: base.vimMatchParen || [selectionText, selection],
+        vimSearch: base.vimSearch || [selectionText, selection],
+        vimVisual: base.vimVisual || [selectionText, selection],
+        vimComment: base.vimComment || [comment],
+        vimConstant: base.vimConstant || [magenta],
+        vimString: base.vimString || [blue],
+        vimCharacter: base.vimCharacter || [blue],
+        vimError: base.vimError || [pink, background],
+        vimIdentifier: base.vimIdentifier || [red],
+        vimStatement: base.vimStatement || [green],
+        vimNoise: base.vimNoise || [green],
+        vimPreProc: base.vimPreProc || [green],
+        vimType: base.vimType || [green],
+        vimSpecial: base.vimSpecial || [orange],
+        vimTodo: base.vimTodo || [background, orange],
+        vimLineNr: base.vimLineNr || [gray],
+        vimCursorLineNr: base.vimCursorLineNr || [red],
+        vimColorColumn: base.vimColorColumn || [null, ruler],
+        vimEndOfBuffer: base.vimEndOfBuffer || [background],
+        vimFolded: base.vimFolded || [black, orange],
+        vimVertSplit: base.vimVertSplit || [foreground, background],
+        vimStatusLine: base.vimStatusLine || [darkRed, white],
+        vimStatusLineNC: base.vimStatusLineNC || [white, darkRed],
+        vimWildMenu: base.vimWildMenu || [darkRed, brightWhite],
+        vimDiffChange: base.vimDiffChange || [brightYellow, background],
+        vimDiffText: base.vimDiffText || [brightBlue, background],
+        vimDiffAdd: base.vimDiffAdd || [brightGreen, background],
+        vimDiffDelete: base.vimDiffDelete || [brightRed, background],
+        vimPmenu: base.vimPmenu || [background, brightWhite],
+        vimPmenuSel: base.vimPmenuSel || [brightWhite, selection],
+        vimPmenuSbar: base.vimPmenuSbar || [null, foreground],
+        vimPmenuThumb: base.vimPmenuThumb || [null, gray],
+        vimJsObjectProp: base.vimJsObjectProp || [red],
+        vimJsObjectKey: base.vimJsObjectKey || [red],
+        vimJsObject: base.vimJsObject || [red],
+        vimJsObjectBraces: base.vimJsObjectBraces || [cyan],
+        vimJsBrackets: base.vimJsBrackets || [cyan],
+        vimJsGlobalObjects: base.vimJsGlobalObjects || [foreground],
+        vimJsBuiltins: base.vimJsBuiltins || [foreground],
+        vimJsGlobalNodeObjects: base.vimJsGlobalNodeObjects || [foreground],
+        vimJsFuncCall: base.vimJsFuncCall || [yellow],
+        vimJsParens: base.vimJsParens || [yellow],
+        vimJsBlockLabel: base.vimJsBlockLabel || [foreground],
+        vimJsVariableDef: base.vimJsVariableDef || [red],
+        vimJsFuncArgs: base.vimJsFuncArgs || [red]
     };
 
     return scheme;
@@ -306,8 +356,9 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
 
 function generate() {
     const scheme = getColorScheme(bloodMoon.colors);
+    const meta = bloodMoon.meta;
 
-    const alacritty = generateAlacritty(bloodMoon.name, scheme);
+    const alacritty = generateAlacritty(meta.name, scheme);
     fs.writeFileSync(
         `./applications/alacritty/${alacritty.fileName}`,
         alacritty.content
@@ -316,25 +367,25 @@ function generate() {
     const hyper = generateHyper(scheme);
     fs.writeFileSync(`./applications/hyper/${hyper.fileName}`, hyper.content);
 
-    const iTerm = generateiTerm(bloodMoon.name, scheme);
+    const iTerm = generateiTerm(meta.name, scheme);
     fs.writeFileSync(`./applications/iterm/${iTerm.fileName}`, iTerm.content);
 
-    const slack = generateSlack(bloodMoon.name, scheme);
+    const slack = generateSlack(meta.name, scheme);
     fs.writeFileSync(`./applications/slack/${slack.fileName}`, slack.content);
 
-    const terminal = generateTerminal(bloodMoon.name, scheme);
+    const terminal = generateTerminal(meta.name, scheme);
     fs.writeFileSync(
         `./applications/terminal/${terminal.fileName}`,
         terminal.content
     );
 
-    const terminator = generateTerminator(bloodMoon.name, scheme);
+    const terminator = generateTerminator(meta.name, scheme);
     fs.writeFileSync(
         `./applications/terminator/${terminator.fileName}`,
         terminator.content
     );
 
-    const termux = generateTermux(bloodMoon.name, scheme);
+    const termux = generateTermux(meta.name, scheme);
     fs.writeFileSync(
         `./applications/termux/${termux.fileName}`,
         termux.content
@@ -346,17 +397,12 @@ function generate() {
         themer.content
     );
 
-    const css = generateCSS(bloodMoon.name, scheme);
+    const css = generateCSS(meta.name, scheme);
     fs.writeFileSync(`./applications/css/${css.fileName}`, css.content);
-    fs.writeFileSync(`./docs/${bloodMoon.name}.css`, css.content);
+    fs.writeFileSync(`./docs/${meta.name}.css`, css.content);
 
-    // if (application === 'vim') {
-    // destination += 'colors/';
-
-    // (fs as any).copyFileSync(
-    // './applications/css/blood-moon.css',
-    // './docs/blood-moon.css'
-    // );
+    const vim = generateVim(meta, scheme);
+    fs.writeFileSync(`./applications/vim/colors/${vim.fileName}`, vim.content);
 
     console.log('Complete!');
 }

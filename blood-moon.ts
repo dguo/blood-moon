@@ -1,6 +1,6 @@
 import Color from 'color';
 
-import {BaseColorScheme, Template} from './types';
+import {BaseColorScheme, Theme} from './types';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -73,7 +73,14 @@ const colors: BaseColorScheme = {
     comment: gray
 };
 
-export default {
+const theme: Theme = {
     colors,
-    name: 'blood-moon'
-} as Template;
+    meta: {
+        description: 'Dark and bold color scheme',
+        homepage: 'https://github.com/dguo/blood-moon',
+        name: 'blood-moon',
+        maintainer: 'Danny Guo'
+    }
+};
+
+export default theme;
