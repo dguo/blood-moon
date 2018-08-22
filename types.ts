@@ -75,6 +75,27 @@ export interface ColorScheme {
     cssI: ColorHex;
     cssA: ColorHex;
 
+    // Firefox
+    firefoxAccent: ColorHex;
+    firefoxButtonBackgroundActive: ColorHex;
+    firefoxButtonBackgroundHover: ColorHex;
+    firefoxIcons: ColorHex;
+    firefoxIconsAttention: ColorHex;
+    firefoxPopup: ColorHex;
+    firefoxPopupHighlight: ColorHex;
+    firefoxPopupHighlightText: ColorHex;
+    firefoxPopupText: ColorHex;
+    firefoxTabBackgroundText: ColorHex;
+    firefoxTabLine: ColorHex;
+    firefoxTabLoading: ColorHex;
+    firefoxTabSelected: ColorHex;
+    firefoxTabText: ColorHex;
+    firefoxToolbar: ColorHex;
+    firefoxToolbarField: ColorHex;
+    firefoxToolbarFieldBorderFocus: ColorHex;
+    firefoxToolbarFieldText: ColorHex;
+    firefoxText: ColorHex;
+
     // Hyper
     hyperCursor: ColorHex;
     hyperCursorAccent: ColorHex;

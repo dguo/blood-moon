@@ -7,6 +7,7 @@ import {BaseColorScheme, ColorScheme} from './types';
 
 import generateAlacritty from './applications/alacritty/template';
 import generateCSS from './applications/css/template';
+import generateFirefox from './applications/firefox/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateSlack from './applications/slack/template';
@@ -165,6 +166,31 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         cssH2: base.cssH2 || green,
         cssI: base.cssI || red,
         cssA: base.cssA || link,
+        // Firefox
+        firefoxAccent: base.firefoxAccent || background,
+        firefoxButtonBackgroundActive:
+            base.firefoxButtonBackgroundActive || brightWhite,
+        firefoxButtonBackgroundHover:
+            base.firefoxButtonBackgroundHover || brightWhite,
+        firefoxIcons: base.firefoxIcons || foreground,
+        firefoxIconsAttention: base.firefoxIconsAttention || blue,
+        firefoxPopup: base.firefoxPopup || background,
+        firefoxPopupHighlight: base.firefoxPopupHighlight || selection,
+        firefoxPopupHighlightText:
+            base.firefoxPopupHighlightText || selectionText,
+        firefoxPopupText: base.firefoxPopupText || foreground,
+        firefoxTabBackgroundText: base.firefoxTabBackgroundText || foreground,
+        firefoxTabLine: base.firefoxTabLine || background,
+        firefoxTabLoading: base.firefoxTabLoading || selectionText,
+        firefoxTabSelected: base.firefoxTabSelected || selection,
+        firefoxTabText: base.firefoxTabText || selectionText,
+        firefoxToolbar: base.firefoxToolbar || selection,
+        firefoxToolbarField: base.firefoxToolbarField || background,
+        firefoxToolbarFieldBorderFocus:
+            base.firefoxToolbarFieldBorderFocus || red,
+        firefoxToolbarFieldText: base.firefoxToolbarFieldText || foreground,
+        firefoxText: base.firefoxText || foreground,
+
         // Hyper
         hyperCursor: base.hyperCursor || cursor,
         hyperCursorAccent: base.hyperCursorAccent || background,
@@ -404,6 +430,12 @@ function generate() {
 
     const vim = generateVim(meta, scheme);
     fs.writeFileSync(`./applications/vim/colors/${vim.fileName}`, vim.content);
+
+    const firefox = generateFirefox(meta, scheme);
+    fs.writeFileSync(
+        `./applications/firefox/${firefox.fileName}`,
+        firefox.content
+    );
 
     console.log('Complete!');
 }

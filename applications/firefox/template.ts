@@ -1,15 +1,20 @@
-import {ColorScheme, TemplateOutput} from '../../types';
+import {titleCase} from 'change-case';
 
-export function generate(name: string, colors: ColorScheme): TemplateOutput {
+import {ColorScheme, Meta, TemplateOutput} from '../../types';
+
+export default function generate(
+    meta: Meta,
+    colors: ColorScheme
+): TemplateOutput {
     const content = `{
     "manifest_version": 2,
-    "name": "Blood Moon",
+    "name": "${titleCase(meta.name)}",
     "version": "0.1.0",
-    "author": "Danny Guo",
-    "homepage_url": "https://github.com/dguo/blood-moon",
+    "author": "${meta.maintainer || ''}",
+    "homepage_url": "${meta.homepage || ''}",
     "applications": {
         "gecko": {
-            "id": "@blood-moon",
+            "id": "@${meta.name}",
             "strict_min_version": "61.0"
         }
     },
@@ -19,25 +24,29 @@ export function generate(name: string, colors: ColorScheme): TemplateOutput {
     },
     "theme": {
         "colors": {
-            "accentcolor": "${colors.background}",
-            "button_background_active": "${colors.lightWhite}",
-            "button_background_hover": "${colors.lightWhite}",
-            "icons": "${colors.foreground}",
-            "icons_attention": "${colors.blue}",
-            "popup": "${colors.background}",
-            "popup_highlight": "${colors.selection}",
-            "popup_highlight_text": "${colors.selectionText}",
-            "popup_text": "${colors.foreground}",
-            "tab_background_text": "${colors.foreground}",
-            "tab_line": "${colors.background}",
-            "tab_loading": "${colors.selectionText}",
-            "tab_selected": "${colors.selection}",
-            "tab_text": "${colors.selectionText}",
-            "toolbar": "${colors.selection}",
-            "toolbar_field": "${colors.background}",
-            "toolbar_field_border_focus": "${colors.red}",
-            "toolbar_field_text": "${colors.foreground}",
-            "textcolor": "${colors.foreground}"
+            "accentcolor": "${colors.firefoxAccent}",
+            "button_background_active": "${
+                colors.firefoxButtonBackgroundActive
+            }",
+            "button_background_hover": "${colors.firefoxButtonBackgroundHover}",
+            "icons": "${colors.firefoxIcons}",
+            "icons_attention": "${colors.firefoxIconsAttention}",
+            "popup": "${colors.firefoxPopup}",
+            "popup_highlight": "${colors.firefoxPopupHighlight}",
+            "popup_highlight_text": "${colors.firefoxPopupHighlightText}",
+            "popup_text": "${colors.firefoxPopupText}",
+            "tab_background_text": "${colors.firefoxTabBackgroundText}",
+            "tab_line": "${colors.firefoxTabLine}",
+            "tab_loading": "${colors.firefoxTabLoading}",
+            "tab_selected": "${colors.firefoxTabSelected}",
+            "tab_text": "${colors.firefoxTabText}",
+            "toolbar": "${colors.firefoxToolbar}",
+            "toolbar_field": "${colors.firefoxToolbarField}",
+            "toolbar_field_border_focus": "${
+                colors.firefoxToolbarFieldBorderFocus
+            }",
+            "toolbar_field_text": "${colors.firefoxToolbarFieldText}",
+            "textcolor": "${colors.firefoxText}"
         }
     }
 }
