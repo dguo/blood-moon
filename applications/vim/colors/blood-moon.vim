@@ -71,28 +71,20 @@ hi PmenuThumb guibg=#696969 ctermbg=241
 " GitGutter and Signify """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi clear SignColumn
 
-" Shell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Markdown """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Python """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " JavaScript """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi jsObjectProp guifg=#C40233 ctermfg=161
 hi jsObjectKey guifg=#C40233 ctermfg=161
 hi jsObject guifg=#C40233 ctermfg=161
 hi jsObjectBraces guifg=#20B2AA ctermfg=73
-hi link jsBrackets jsObjectBraces
+hi jsBrackets guifg=#20B2AA ctermfg=73
 hi jsGlobalObjects guifg=#C6C6C4 ctermfg=188
-hi link jsBuiltins jsGlobalObjects
-hi link jsGlobalNodeObjects jsGlobalObjects
+hi jsBuiltins guifg=#C6C6C4 ctermfg=188
+hi jsGlobalNodeObjects guifg=#C6C6C4 ctermfg=188
 hi jsFuncCall guifg=#FFD700 ctermfg=220
-hi link jsParens jsFuncCall
+hi jsParens guifg=#FFD700 ctermfg=220
 hi jsBlockLabel guifg=#C6C6C4 ctermfg=188
-hi link jsVariableDef Identifier
-hi link jsFuncArgs Identifier
+hi jsVariableDef guifg=#C40233 ctermfg=161
+hi jsFuncArgs guifg=#C40233 ctermfg=161
 
 " JSON """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link jsonKeyword jsObjectKey
-
-" Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi jsonKeyword guifg=#C40233 ctermfg=161

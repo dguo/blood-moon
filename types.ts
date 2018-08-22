@@ -270,6 +270,8 @@ export interface ColorScheme {
     vimJsBlockLabel: VimColor;
     vimJsVariableDef: VimColor;
     vimJsFuncArgs: VimColor;
+    // JSON
+    vimJsonKeyword: VimColor;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};

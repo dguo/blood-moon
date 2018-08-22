@@ -1,5 +1,5 @@
-import Color from 'color';
 import {titleCase} from 'change-case';
+import Color from 'color';
 
 import {ColorScheme, Meta, TemplateOutput, VimColor} from '../../types';
 
@@ -109,31 +109,23 @@ hi PmenuThumb ${translate(colors.vimPmenuThumb)}
 " GitGutter and Signify """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi clear SignColumn
 
-" Shell """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Markdown """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Python """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " JavaScript """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi jsObjectProp ${translate(colors.vimJsObjectProp)}
 hi jsObjectKey ${translate(colors.vimJsObjectKey)}
 hi jsObject ${translate(colors.vimJsObject)}
 hi jsObjectBraces ${translate(colors.vimJsObjectBraces)}
-hi link jsBrackets jsObjectBraces
+hi jsBrackets ${translate(colors.vimJsBrackets)}
 hi jsGlobalObjects ${translate(colors.vimJsGlobalObjects)}
-hi link jsBuiltins jsGlobalObjects
-hi link jsGlobalNodeObjects jsGlobalObjects
+hi jsBuiltins ${translate(colors.vimJsBuiltins)}
+hi jsGlobalNodeObjects ${translate(colors.vimJsGlobalNodeObjects)}
 hi jsFuncCall ${translate(colors.vimJsFuncCall)}
-hi link jsParens jsFuncCall
+hi jsParens ${translate(colors.vimJsParens)}
 hi jsBlockLabel ${translate(colors.vimJsBlockLabel)}
-hi link jsVariableDef Identifier
-hi link jsFuncArgs Identifier
+hi jsVariableDef ${translate(colors.vimJsVariableDef)}
+hi jsFuncArgs ${translate(colors.vimJsFuncArgs)}
 
 " JSON """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link jsonKeyword jsObjectKey
-
-" Rust """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi jsonKeyword ${translate(colors.vimJsonKeyword)}
 `;
 
     return {

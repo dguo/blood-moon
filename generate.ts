@@ -348,7 +348,8 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         vimJsParens: base.vimJsParens || [yellow],
         vimJsBlockLabel: base.vimJsBlockLabel || [foreground],
         vimJsVariableDef: base.vimJsVariableDef || [red],
-        vimJsFuncArgs: base.vimJsFuncArgs || [red]
+        vimJsFuncArgs: base.vimJsFuncArgs || [red],
+        vimJsonKeyword: base.vimJsonKeyword || [red]
     };
 
     return scheme;
