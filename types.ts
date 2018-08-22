@@ -76,6 +76,7 @@ export interface ColorScheme {
     cssA: ColorHex;
 
     // Firefox
+    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme
     firefoxAccent: ColorHex;
     firefoxButtonBackgroundActive: ColorHex;
     firefoxButtonBackgroundHover: ColorHex;
