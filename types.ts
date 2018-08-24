@@ -148,6 +148,38 @@ export interface ColorScheme {
     iTermSelectionText: ColorHex;
     iTermSelection: ColorHex;
 
+    // Kitty
+    // https://sw.kovidgoyal.net/kitty/conf.html#color-scheme
+    kittyBlack: ColorHex;
+    kittyRed: ColorHex;
+    kittyGreen: ColorHex;
+    kittyYellow: ColorHex;
+    kittyBlue: ColorHex;
+    kittyMagenta: ColorHex;
+    kittyCyan: ColorHex;
+    kittyWhite: ColorHex;
+    kittyBrightBlack: ColorHex;
+    kittyBrightRed: ColorHex;
+    kittyBrightGreen: ColorHex;
+    kittyBrightYellow: ColorHex;
+    kittyBrightBlue: ColorHex;
+    kittyBrightMagenta: ColorHex;
+    kittyBrightCyan: ColorHex;
+    kittyBrightWhite: ColorHex;
+    kittyCursor: ColorHex;
+    kittyLink: ColorHex;
+    kittyActiveBorder: ColorHex;
+    kittyInactiveBorder: ColorHex;
+    kittyBellBorder: ColorHex;
+    kittyActiveTabForeground: ColorHex;
+    kittyActiveTabBackground: ColorHex;
+    kittyInactiveTabForeground: ColorHex;
+    kittyInactiveTabBackground: ColorHex;
+    kittyForeground: ColorHex;
+    kittyBackground: ColorHex;
+    kittySelectionText: ColorHex;
+    kittySelection: ColorHex;
+
     // Slack
     slackColumnBackground: ColorHex;
     slackMenuBackgroundHover: ColorHex;

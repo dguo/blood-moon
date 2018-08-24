@@ -10,6 +10,7 @@ import generateCSS from './applications/css/template';
 import generateFirefox from './applications/firefox/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
+import generateKitty from './applications/kitty/template';
 import generateSlack from './applications/slack/template';
 import generateTerminal from './applications/terminal/template';
 import generateTerminator from './applications/terminator/template';
@@ -240,6 +241,38 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         iTermLink: base.iTermLink || link,
         iTermSelectionText: base.iTermSelectionText || selectionText,
         iTermSelection: base.iTermSelection || selection,
+        // Kitty
+        kittyBlack: base.kittyBlack || black,
+        kittyRed: base.kittyRed || red,
+        kittyGreen: base.kittyGreen || green,
+        kittyYellow: base.kittyYellow || yellow,
+        kittyBlue: base.kittyBlue || blue,
+        kittyMagenta: base.kittyMagenta || magenta,
+        kittyCyan: base.kittyCyan || cyan,
+        kittyWhite: base.kittyWhite || white,
+        kittyBrightBlack: base.kittyBrightBlack || brightBlack,
+        kittyBrightRed: base.kittyBrightRed || brightRed,
+        kittyBrightGreen: base.kittyBrightGreen || brightGreen,
+        kittyBrightYellow: base.kittyBrightYellow || brightYellow,
+        kittyBrightBlue: base.kittyBrightBlue || brightBlue,
+        kittyBrightMagenta: base.kittyBrightMagenta || brightMagenta,
+        kittyBrightCyan: base.kittyBrightCyan || brightCyan,
+        kittyBrightWhite: base.kittyBrightWhite || brightWhite,
+        kittyCursor: base.kittyCursor || cursor,
+        kittyLink: base.kittyLink || link,
+        kittyActiveBorder: base.kittyActiveBorder || border,
+        kittyInactiveBorder: base.kittyInactiveBorder || border,
+        kittyBellBorder: base.kittyBellBorder || border,
+        kittyActiveTabForeground: base.kittyActiveTabForeground || foreground,
+        kittyActiveTabBackground: base.kittyActiveTabBackground || background,
+        kittyInactiveTabForeground:
+            base.kittyInactiveTabForeground || foreground,
+        kittyInactiveTabBackground:
+            base.kittyInactiveTabBackground || background,
+        kittyForeground: base.kittyForeground || foreground,
+        kittyBackground: base.kittyBackground || background,
+        kittySelectionText: base.kittySelectionText || selectionText,
+        kittySelection: base.kittySelection || selection,
         // Slack
         slackColumnBackground: base.slackColumnBackground || background,
         slackMenuBackgroundHover: base.slackMenuBackgroundHover || brightWhite,
@@ -396,6 +429,9 @@ function generate() {
 
     const iTerm = generateiTerm(meta.name, scheme);
     fs.writeFileSync(`./applications/iterm/${iTerm.fileName}`, iTerm.content);
+
+    const kitty = generateKitty(meta.name, scheme);
+    fs.writeFileSync(`./applications/kitty/${kitty.fileName}`, kitty.content);
 
     const slack = generateSlack(meta.name, scheme);
     fs.writeFileSync(`./applications/slack/${slack.fileName}`, slack.content);
