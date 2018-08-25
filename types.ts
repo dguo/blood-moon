@@ -402,6 +402,27 @@ export interface ColorScheme {
     vimJsFuncArgs: VimColor;
     // JSON
     vimJsonKeyword: VimColor;
+
+    // Xresources
+    // https://wiki.archlinux.org/index.php/x_resources
+    xresourcesBlack: ColorHex;
+    xresourcesRed: ColorHex;
+    xresourcesGreen: ColorHex;
+    xresourcesYellow: ColorHex;
+    xresourcesBlue: ColorHex;
+    xresourcesMagenta: ColorHex;
+    xresourcesCyan: ColorHex;
+    xresourcesWhite: ColorHex;
+    xresourcesBrightBlack: ColorHex;
+    xresourcesBrightRed: ColorHex;
+    xresourcesBrightGreen: ColorHex;
+    xresourcesBrightYellow: ColorHex;
+    xresourcesBrightBlue: ColorHex;
+    xresourcesBrightMagenta: ColorHex;
+    xresourcesBrightCyan: ColorHex;
+    xresourcesBrightWhite: ColorHex;
+    xresourcesBackground: ColorHex;
+    xresourcesForeground: ColorHex;
 }
 
 export type BaseColorScheme = {[P in keyof ColorScheme]?: ColorScheme[P]};

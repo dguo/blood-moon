@@ -1,0 +1,19 @@
+! Blood Moon
+*.background: #10100E
+*.foreground: #C6C6C4
+*.color0: #10100E
+*.color1: #C40233
+*.color2: #009F6B
+*.color3: #FFD700
+*.color4: #0087BD
+*.color5: #9A4EAE
+*.color6: #20B2AA
+*.color7: #C6C6C4
+*.color8: #696969
+*.color9: #FF2400
+*.color10: #03C03C
+*.color11: #FDFF00
+*.color12: #007FFF
+*.color13: #FF1493
+*.color14: #00CCCC
+*.color15: #FFFAFA

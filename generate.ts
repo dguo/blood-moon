@@ -20,6 +20,7 @@ import generateTerminator from './applications/terminator/template';
 import generateTermux from './applications/termux/template';
 import generateThemer from './applications/themer/template';
 import generateVim from './applications/vim/template';
+import generateXResources from './applications/xresources/template';
 
 function lighten(hex: string, value: number): string {
     const rgb = Color(hex)
@@ -477,7 +478,27 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         vimJsBlockLabel: base.vimJsBlockLabel || [foreground],
         vimJsVariableDef: base.vimJsVariableDef || [red],
         vimJsFuncArgs: base.vimJsFuncArgs || [red],
-        vimJsonKeyword: base.vimJsonKeyword || [red]
+        vimJsonKeyword: base.vimJsonKeyword || [red],
+
+        // Xresources
+        xresourcesBlack: base.xresourcesBlack || black,
+        xresourcesRed: base.xresourcesRed || red,
+        xresourcesGreen: base.xresourcesGreen || green,
+        xresourcesYellow: base.xresourcesYellow || yellow,
+        xresourcesBlue: base.xresourcesBlue || blue,
+        xresourcesMagenta: base.xresourcesMagenta || magenta,
+        xresourcesCyan: base.xresourcesCyan || cyan,
+        xresourcesWhite: base.xresourcesWhite || white,
+        xresourcesBrightBlack: base.xresourcesBrightBlack || brightBlack,
+        xresourcesBrightRed: base.xresourcesBrightRed || brightRed,
+        xresourcesBrightGreen: base.xresourcesBrightGreen || brightGreen,
+        xresourcesBrightYellow: base.xresourcesBrightYellow || brightYellow,
+        xresourcesBrightBlue: base.xresourcesBrightBlue || brightBlue,
+        xresourcesBrightMagenta: base.xresourcesBrightMagenta || brightMagenta,
+        xresourcesBrightCyan: base.xresourcesBrightCyan || brightCyan,
+        xresourcesBrightWhite: base.xresourcesBrightWhite || brightWhite,
+        xresourcesForeground: base.xresourcesForeground || foreground,
+        xresourcesBackground: base.xresourcesBackground || background
     };
 
     return scheme;
@@ -550,6 +571,12 @@ function generate() {
 
     const vim = generateVim(meta, scheme);
     fs.writeFileSync(`./applications/vim/colors/${vim.fileName}`, vim.content);
+
+    const xresources = generateXResources(meta.name, scheme);
+    fs.writeFileSync(
+        `./applications/xresources/${xresources.fileName}`,
+        xresources.content
+    );
 
     const firefox = generateFirefox(meta, scheme);
     fs.writeFileSync(
