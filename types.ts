@@ -180,6 +180,28 @@ export interface ColorScheme {
     kittySelectionText: ColorHex;
     kittySelection: ColorHex;
 
+    // Mintty
+    // https://github.com/mintty/mintty/tree/master/themes
+    minttyBlack: ColorHex;
+    minttyRed: ColorHex;
+    minttyGreen: ColorHex;
+    minttyYellow: ColorHex;
+    minttyBlue: ColorHex;
+    minttyMagenta: ColorHex;
+    minttyCyan: ColorHex;
+    minttyWhite: ColorHex;
+    minttyBrightBlack: ColorHex;
+    minttyBrightRed: ColorHex;
+    minttyBrightGreen: ColorHex;
+    minttyBrightYellow: ColorHex;
+    minttyBrightBlue: ColorHex;
+    minttyBrightMagenta: ColorHex;
+    minttyBrightCyan: ColorHex;
+    minttyBrightWhite: ColorHex;
+    minttyForeground: ColorHex;
+    minttyBackground: ColorHex;
+    minttyCursor: ColorHex;
+
     // Putty
     puttyBlack: ColorHex;
     puttyRed: ColorHex;

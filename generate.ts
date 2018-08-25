@@ -11,6 +11,7 @@ import generateFirefox from './applications/firefox/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateKitty from './applications/kitty/template';
+import generateMintty from './applications/mintty/template';
 import generatePutty from './applications/putty/template';
 import generateSlack from './applications/slack/template';
 import generateTerminal from './applications/terminal/template';
@@ -274,6 +275,26 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         kittyBackground: base.kittyBackground || background,
         kittySelectionText: base.kittySelectionText || selectionText,
         kittySelection: base.kittySelection || selection,
+        // Mintty
+        minttyBlack: base.minttyBlack || black,
+        minttyRed: base.minttyRed || red,
+        minttyGreen: base.minttyGreen || green,
+        minttyYellow: base.minttyYellow || yellow,
+        minttyBlue: base.minttyBlue || blue,
+        minttyMagenta: base.minttyMagenta || magenta,
+        minttyCyan: base.minttyCyan || cyan,
+        minttyWhite: base.minttyWhite || white,
+        minttyBrightBlack: base.minttyBrightBlack || brightBlack,
+        minttyBrightRed: base.minttyBrightRed || brightRed,
+        minttyBrightGreen: base.minttyBrightGreen || brightGreen,
+        minttyBrightYellow: base.minttyBrightYellow || brightYellow,
+        minttyBrightBlue: base.minttyBrightBlue || brightBlue,
+        minttyBrightMagenta: base.minttyBrightMagenta || brightMagenta,
+        minttyBrightCyan: base.minttyBrightCyan || brightCyan,
+        minttyBrightWhite: base.minttyBrightWhite || brightWhite,
+        minttyCursor: base.minttyCursor || cursor,
+        minttyForeground: base.minttyForeground || foreground,
+        minttyBackground: base.minttyBackground || background,
         // Putty
         puttyBlack: base.puttyBlack || black,
         puttyRed: base.puttyRed || red,
@@ -456,6 +477,12 @@ function generate() {
 
     const kitty = generateKitty(meta.name, scheme);
     fs.writeFileSync(`./applications/kitty/${kitty.fileName}`, kitty.content);
+
+    const mintty = generateMintty(meta, scheme);
+    fs.writeFileSync(
+        `./applications/mintty/${mintty.fileName}`,
+        mintty.content
+    );
 
     const putty = generatePutty(meta.name, scheme);
     fs.writeFileSync(`./applications/putty/${putty.fileName}`, putty.content);

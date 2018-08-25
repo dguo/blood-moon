@@ -1,0 +1,21 @@
+# https://github.com/dguo/blood-moon
+
+BackgroundColour=16,16,14
+ForegroundColour=198,198,196
+CursorColour=198,198,196
+Black=16,16,14
+BoldBlack=105,105,105
+Red=196,2,51
+BoldRed=255,36,0
+Green=0,159,107
+BoldGreen=3,192,60
+Yellow=255,215,0
+BoldYellow=253,255,0
+Blue=0,135,189
+BoldBlue=0,127,255
+Magenta=154,78,174
+BoldMagenta=255,20,147
+Cyan=32,178,170
+BoldCyan=0,204,204
+White=198,198,196
+BoldWhite=255,250,250
