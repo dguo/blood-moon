@@ -210,6 +210,28 @@ export interface ColorScheme {
     kittySelectionText: ColorHex;
     kittySelection: ColorHex;
 
+    // Konsole
+    konsoleBlack: ColorHex;
+    konsoleRed: ColorHex;
+    konsoleGreen: ColorHex;
+    konsoleYellow: ColorHex;
+    konsoleBlue: ColorHex;
+    konsoleMagenta: ColorHex;
+    konsoleCyan: ColorHex;
+    konsoleWhite: ColorHex;
+    konsoleBrightBlack: ColorHex;
+    konsoleBrightRed: ColorHex;
+    konsoleBrightGreen: ColorHex;
+    konsoleBrightYellow: ColorHex;
+    konsoleBrightBlue: ColorHex;
+    konsoleBrightMagenta: ColorHex;
+    konsoleBrightCyan: ColorHex;
+    konsoleBrightWhite: ColorHex;
+    konsoleBackground: ColorHex;
+    konsoleBoldBackground: ColorHex;
+    konsoleForeground: ColorHex;
+    konsoleBoldForeground: ColorHex;
+
     // Mintty
     // https://github.com/mintty/mintty/tree/master/themes
     minttyBlack: ColorHex;

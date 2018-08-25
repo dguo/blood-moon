@@ -12,6 +12,7 @@ import generateFirefox from './applications/firefox/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateKitty from './applications/kitty/template';
+import generateKonsole from './applications/konsole/template';
 import generateMintty from './applications/mintty/template';
 import generatePutty from './applications/putty/template';
 import generateSlack from './applications/slack/template';
@@ -300,6 +301,29 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         kittyBackground: base.kittyBackground || background,
         kittySelectionText: base.kittySelectionText || selectionText,
         kittySelection: base.kittySelection || selection,
+
+        // Konsole
+        konsoleBlack: base.konsoleBlack || black,
+        konsoleRed: base.konsoleRed || red,
+        konsoleGreen: base.konsoleGreen || green,
+        konsoleYellow: base.konsoleYellow || yellow,
+        konsoleBlue: base.konsoleBlue || blue,
+        konsoleMagenta: base.konsoleMagenta || magenta,
+        konsoleCyan: base.konsoleCyan || cyan,
+        konsoleWhite: base.konsoleWhite || white,
+        konsoleBrightBlack: base.konsoleBrightBlack || brightBlack,
+        konsoleBrightRed: base.konsoleBrightRed || brightRed,
+        konsoleBrightGreen: base.konsoleBrightGreen || brightGreen,
+        konsoleBrightYellow: base.konsoleBrightYellow || brightYellow,
+        konsoleBrightBlue: base.konsoleBrightBlue || brightBlue,
+        konsoleBrightMagenta: base.konsoleBrightMagenta || brightMagenta,
+        konsoleBrightCyan: base.konsoleBrightCyan || brightCyan,
+        konsoleBrightWhite: base.konsoleBrightWhite || brightWhite,
+        konsoleBackground: base.konsoleBackground || background,
+        konsoleBoldBackground: base.konsoleBoldBackground || background,
+        konsoleForeground: base.konsoleForeground || foreground,
+        konsoleBoldForeground: base.konsoleBoldForeground || foreground,
+
         // Mintty
         minttyBlack: base.minttyBlack || black,
         minttyRed: base.minttyRed || red,
@@ -528,6 +552,12 @@ function generate() {
 
     const kitty = generateKitty(meta.name, scheme);
     fs.writeFileSync(`./applications/kitty/${kitty.fileName}`, kitty.content);
+
+    const konsole = generateKonsole(meta.name, scheme);
+    fs.writeFileSync(
+        `./applications/konsole/${konsole.fileName}`,
+        konsole.content
+    );
 
     const mintty = generateMintty(meta, scheme);
     fs.writeFileSync(
