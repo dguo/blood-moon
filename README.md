@@ -23,21 +23,22 @@ instructions.
   - Some schemes only use a few colors or limit syntax highlighting to some elements.
   - With Blood Moon, code is filled with a wide variety of colors, to the point
     that some people will find it excessive and possibly distracting.
-- Flexible
-  - I tried using [Base 16](http://chriskempson.com/projects/base16/) and
-    [Themer](https://themer.mjswensen.com/). I recommend them for ease of use,
-    but I wanted very fine-grained control in how different syntax and UI
-    elements are colored.
 
 ## Alternatives
 
-Here are some alternatives that you might like better. You could also play
-around with [terminal.sexy](https://terminal.sexy/).
+### Themes
 
 - [Solarized](http://ethanschoonover.com/solarized)
 - [gruvbox](https://github.com/morhetz/gruvbox)
 - [Zenburn](http://kippura.org/zenburnpage/)
 - [Dracula](https://draculatheme.com/)
+
+### Generators
+
+- [4bit](https://github.com/ciembor/4bit)
+- [Base16](http://chriskempson.com/projects/base16/)
+- [terminal.sexy](https://terminal.sexy/)
+- [Themer](https://themer.mjswensen.com/)
 
 ## License
 
