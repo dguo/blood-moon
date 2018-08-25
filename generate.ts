@@ -6,6 +6,7 @@ import bloodMoon from './blood-moon';
 import {BaseColorScheme, ColorScheme} from './types';
 
 import generateAlacritty from './applications/alacritty/template';
+import generateConEmu from './applications/conemu/template';
 import generateCSS from './applications/css/template';
 import generateFirefox from './applications/firefox/template';
 import generateHyper from './applications/hyper/template';
@@ -162,6 +163,29 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         alacrittyBrightMagenta: base.alacrittyBrightMagenta || brightMagenta,
         alacrittyBrightCyan: base.alacrittyBrightCyan || brightCyan,
         alacrittyBrightWhite: base.alacrittyBrightWhite || brightWhite,
+
+        // ConEmu
+        conemuBlack: base.conemuBlack || black,
+        conemuRed: base.conemuRed || red,
+        conemuGreen: base.conemuGreen || green,
+        conemuYellow: base.conemuYellow || yellow,
+        conemuBlue: base.conemuBlue || blue,
+        conemuMagenta: base.conemuMagenta || magenta,
+        conemuCyan: base.conemuCyan || cyan,
+        conemuWhite: base.conemuWhite || white,
+        conemuBrightBlack: base.conemuBrightBlack || brightBlack,
+        conemuBrightRed: base.conemuBrightRed || brightRed,
+        conemuBrightGreen: base.conemuBrightGreen || brightGreen,
+        conemuBrightYellow: base.conemuBrightYellow || brightYellow,
+        conemuBrightBlue: base.conemuBrightBlue || brightBlue,
+        conemuBrightMagenta: base.conemuBrightMagenta || brightMagenta,
+        conemuBrightCyan: base.conemuBrightCyan || brightCyan,
+        conemuBrightWhite: base.conemuBrightWhite || brightWhite,
+        conemuForeground: base.conemuForeground || 7,
+        conemuBackground: base.conemuBackground || 0,
+        conemuPopupForeground: base.conemuPopupForeground || 7,
+        conemuPopupBackground: base.conemuPopupBackground || 0,
+
         // CSS
         cssForeground: base.cssForeground || foreground,
         cssBackground: base.cssBackground || background,
@@ -467,6 +491,12 @@ function generate() {
     fs.writeFileSync(
         `./applications/alacritty/${alacritty.fileName}`,
         alacritty.content
+    );
+
+    const conemu = generateConEmu(meta.name, scheme);
+    fs.writeFileSync(
+        `./applications/conemu/${conemu.fileName}`,
+        conemu.content
     );
 
     const hyper = generateHyper(scheme);

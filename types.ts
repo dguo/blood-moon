@@ -67,6 +67,36 @@ export interface ColorScheme {
     alacrittyBrightCyan: ColorHex;
     alacrittyBrightWhite: ColorHex;
 
+    // ConEmu
+    // https://conemu.github.io/en/SettingsColors.html
+    // Note that the extended foreground colors feature was removed as of
+    // build 180318.
+    // https://github.com/Maximus5/ConEmu/issues/1595#issuecomment-397274625
+    conemuBlack: ColorHex;
+    conemuRed: ColorHex;
+    conemuGreen: ColorHex;
+    conemuYellow: ColorHex;
+    conemuBlue: ColorHex;
+    conemuMagenta: ColorHex;
+    conemuCyan: ColorHex;
+    conemuWhite: ColorHex;
+    conemuBrightBlack: ColorHex;
+    conemuBrightRed: ColorHex;
+    conemuBrightGreen: ColorHex;
+    conemuBrightYellow: ColorHex;
+    conemuBrightBlue: ColorHex;
+    conemuBrightMagenta: ColorHex;
+    conemuBrightCyan: ColorHex;
+    conemuBrightWhite: ColorHex;
+    // The foreground and background colors cannot be set to arbitrary colors.
+    // They have to be one of the ANSI colors, so they take an index between 0
+    // and 15 (inclusive). A value of 16 can also be supplied, which means
+    // "Auto".
+    conemuForeground: number;
+    conemuBackground: number;
+    conemuPopupForeground: number;
+    conemuPopupBackground: number;
+
     // CSS
     cssForeground: ColorHex;
     cssBackground: ColorHex;
