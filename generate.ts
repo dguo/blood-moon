@@ -11,6 +11,7 @@ import generateFirefox from './applications/firefox/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateKitty from './applications/kitty/template';
+import generatePutty from './applications/putty/template';
 import generateSlack from './applications/slack/template';
 import generateTerminal from './applications/terminal/template';
 import generateTerminator from './applications/terminator/template';
@@ -273,6 +274,29 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         kittyBackground: base.kittyBackground || background,
         kittySelectionText: base.kittySelectionText || selectionText,
         kittySelection: base.kittySelection || selection,
+        // Putty
+        puttyBlack: base.puttyBlack || black,
+        puttyRed: base.puttyRed || red,
+        puttyGreen: base.puttyGreen || green,
+        puttyYellow: base.puttyYellow || yellow,
+        puttyBlue: base.puttyBlue || blue,
+        puttyMagenta: base.puttyMagenta || magenta,
+        puttyCyan: base.puttyCyan || cyan,
+        puttyWhite: base.puttyWhite || white,
+        puttyBrightBlack: base.puttyBrightBlack || brightBlack,
+        puttyBrightRed: base.puttyBrightRed || brightRed,
+        puttyBrightGreen: base.puttyBrightGreen || brightGreen,
+        puttyBrightYellow: base.puttyBrightYellow || brightYellow,
+        puttyBrightBlue: base.puttyBrightBlue || brightBlue,
+        puttyBrightMagenta: base.puttyBrightMagenta || brightMagenta,
+        puttyBrightCyan: base.puttyBrightCyan || brightCyan,
+        puttyBrightWhite: base.puttyBrightWhite || brightWhite,
+        puttyCursor: base.puttyCursor || cursor,
+        puttyCursorText: base.puttyCursorText || foreground,
+        puttyForeground: base.puttyForeground || foreground,
+        puttyBoldForeground: base.puttyBoldForeground || foreground,
+        puttyBackground: base.puttyBackground || background,
+        puttyBoldBackground: base.puttyBoldBackground || background,
         // Slack
         slackColumnBackground: base.slackColumnBackground || background,
         slackMenuBackgroundHover: base.slackMenuBackgroundHover || brightWhite,
@@ -432,6 +456,9 @@ function generate() {
 
     const kitty = generateKitty(meta.name, scheme);
     fs.writeFileSync(`./applications/kitty/${kitty.fileName}`, kitty.content);
+
+    const putty = generatePutty(meta.name, scheme);
+    fs.writeFileSync(`./applications/putty/${putty.fileName}`, putty.content);
 
     const slack = generateSlack(meta.name, scheme);
     fs.writeFileSync(`./applications/slack/${slack.fileName}`, slack.content);

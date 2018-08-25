@@ -3,7 +3,7 @@ export interface TemplateOutput {
     content: string;
 }
 
-type ColorHex = string;
+export type ColorHex = string;
 export type VimColor = [ColorHex | null, ColorHex] | [ColorHex];
 
 export interface ColorScheme {
@@ -179,6 +179,30 @@ export interface ColorScheme {
     kittyBackground: ColorHex;
     kittySelectionText: ColorHex;
     kittySelection: ColorHex;
+
+    // Putty
+    puttyBlack: ColorHex;
+    puttyRed: ColorHex;
+    puttyGreen: ColorHex;
+    puttyYellow: ColorHex;
+    puttyBlue: ColorHex;
+    puttyMagenta: ColorHex;
+    puttyCyan: ColorHex;
+    puttyWhite: ColorHex;
+    puttyBrightBlack: ColorHex;
+    puttyBrightRed: ColorHex;
+    puttyBrightGreen: ColorHex;
+    puttyBrightYellow: ColorHex;
+    puttyBrightBlue: ColorHex;
+    puttyBrightMagenta: ColorHex;
+    puttyBrightCyan: ColorHex;
+    puttyBrightWhite: ColorHex;
+    puttyForeground: ColorHex;
+    puttyBoldForeground: ColorHex;
+    puttyBackground: ColorHex;
+    puttyBoldBackground: ColorHex;
+    puttyCursor: ColorHex;
+    puttyCursorText: ColorHex;
 
     // Slack
     slackColumnBackground: ColorHex;
