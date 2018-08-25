@@ -26,3 +26,4 @@ Installation:
 
 5. There may be multiple palettes if you have multiple saved schemes. Find the one for `foobar`, and replace the values with the values in `blood-moon.xml`.
 6. Restart ConEmu, go back into the settings menu, and select the new theme.
+7. To persist the change, make sure to `Save settings` in the settings menu.
