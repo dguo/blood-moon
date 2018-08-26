@@ -127,6 +127,31 @@ export interface ColorScheme {
     firefoxToolbarFieldText: ColorHex;
     firefoxText: ColorHex;
 
+    // GNOME Terminal
+    gnomeTerminalBlack: ColorHex;
+    gnomeTerminalRed: ColorHex;
+    gnomeTerminalGreen: ColorHex;
+    gnomeTerminalYellow: ColorHex;
+    gnomeTerminalBlue: ColorHex;
+    gnomeTerminalMagenta: ColorHex;
+    gnomeTerminalCyan: ColorHex;
+    gnomeTerminalWhite: ColorHex;
+    gnomeTerminalBrightBlack: ColorHex;
+    gnomeTerminalBrightRed: ColorHex;
+    gnomeTerminalBrightGreen: ColorHex;
+    gnomeTerminalBrightYellow: ColorHex;
+    gnomeTerminalBrightBlue: ColorHex;
+    gnomeTerminalBrightMagenta: ColorHex;
+    gnomeTerminalBrightCyan: ColorHex;
+    gnomeTerminalBrightWhite: ColorHex;
+    gnomeTerminalBackground: ColorHex;
+    gnomeTerminalForeground: ColorHex;
+    gnomeTerminalBoldForeground: ColorHex;
+    gnomeTerminalCursor: ColorHex;
+    gnomeTerminalCursorText: ColorHex;
+    gnomeTerminalSelection: ColorHex;
+    gnomeTerminalSelectionText: ColorHex;
+
     // Hyper
     hyperCursor: ColorHex;
     hyperCursorAccent: ColorHex;

@@ -9,6 +9,7 @@ import generateAlacritty from './applications/alacritty/template';
 import generateConEmu from './applications/conemu/template';
 import generateCSS from './applications/css/template';
 import generateFirefox from './applications/firefox/template';
+import generateGnomeTerminal from './applications/gnome-terminal/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateKitty from './applications/kitty/template';
@@ -219,6 +220,34 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
             base.firefoxToolbarFieldBorderFocus || red,
         firefoxToolbarFieldText: base.firefoxToolbarFieldText || foreground,
         firefoxText: base.firefoxText || foreground,
+
+        // GNOME Terminal
+        gnomeTerminalBlack: base.gnomeTerminalBlack || black,
+        gnomeTerminalRed: base.gnomeTerminalRed || red,
+        gnomeTerminalGreen: base.gnomeTerminalGreen || green,
+        gnomeTerminalYellow: base.gnomeTerminalYellow || yellow,
+        gnomeTerminalBlue: base.gnomeTerminalBlue || blue,
+        gnomeTerminalMagenta: base.gnomeTerminalMagenta || magenta,
+        gnomeTerminalCyan: base.gnomeTerminalCyan || cyan,
+        gnomeTerminalWhite: base.gnomeTerminalWhite || white,
+        gnomeTerminalBrightBlack: base.gnomeTerminalBrightBlack || brightBlack,
+        gnomeTerminalBrightRed: base.gnomeTerminalBrightRed || brightRed,
+        gnomeTerminalBrightGreen: base.gnomeTerminalBrightGreen || brightGreen,
+        gnomeTerminalBrightYellow:
+            base.gnomeTerminalBrightYellow || brightYellow,
+        gnomeTerminalBrightBlue: base.gnomeTerminalBrightBlue || brightBlue,
+        gnomeTerminalBrightMagenta:
+            base.gnomeTerminalBrightMagenta || brightMagenta,
+        gnomeTerminalBrightCyan: base.gnomeTerminalBrightCyan || brightCyan,
+        gnomeTerminalBrightWhite: base.gnomeTerminalBrightWhite || brightWhite,
+        gnomeTerminalBackground: base.gnomeTerminalBackground || background,
+        gnomeTerminalBoldForeground: base.gnomeTerminalBoldForeground || bold,
+        gnomeTerminalCursor: base.gnomeTerminalCursor || cursor,
+        gnomeTerminalCursorText: base.gnomeTerminalCursorText || cursor,
+        gnomeTerminalForeground: base.gnomeTerminalForeground || foreground,
+        gnomeTerminalSelectionText:
+            base.gnomeTerminalSelectionText || selectionText,
+        gnomeTerminalSelection: base.gnomeTerminalSelection || selection,
 
         // Hyper
         hyperCursor: base.hyperCursor || cursor,
@@ -542,6 +571,12 @@ function generate() {
     fs.writeFileSync(
         `./applications/conemu/${conemu.fileName}`,
         conemu.content
+    );
+
+    const gnomeTerminal = generateGnomeTerminal(meta.name, scheme);
+    fs.writeFileSync(
+        `./applications/gnome-terminal/${gnomeTerminal.fileName}`,
+        gnomeTerminal.content
     );
 
     const hyper = generateHyper(scheme);
