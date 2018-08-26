@@ -152,6 +152,26 @@ export interface ColorScheme {
     gnomeTerminalSelection: ColorHex;
     gnomeTerminalSelectionText: ColorHex;
 
+    // Guake
+    guakeBlack: ColorHex;
+    guakeRed: ColorHex;
+    guakeGreen: ColorHex;
+    guakeYellow: ColorHex;
+    guakeBlue: ColorHex;
+    guakeMagenta: ColorHex;
+    guakeCyan: ColorHex;
+    guakeWhite: ColorHex;
+    guakeBrightBlack: ColorHex;
+    guakeBrightRed: ColorHex;
+    guakeBrightGreen: ColorHex;
+    guakeBrightYellow: ColorHex;
+    guakeBrightBlue: ColorHex;
+    guakeBrightMagenta: ColorHex;
+    guakeBrightCyan: ColorHex;
+    guakeBrightWhite: ColorHex;
+    guakeBackground: ColorHex;
+    guakeForeground: ColorHex;
+
     // Hyper
     hyperCursor: ColorHex;
     hyperCursorAccent: ColorHex;

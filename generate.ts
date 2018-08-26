@@ -10,6 +10,7 @@ import generateConEmu from './applications/conemu/template';
 import generateCSS from './applications/css/template';
 import generateFirefox from './applications/firefox/template';
 import generateGnomeTerminal from './applications/gnome-terminal/template';
+import generateGuake from './applications/guake/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateKitty from './applications/kitty/template';
@@ -248,6 +249,26 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         gnomeTerminalSelectionText:
             base.gnomeTerminalSelectionText || selectionText,
         gnomeTerminalSelection: base.gnomeTerminalSelection || selection,
+
+        // Guake
+        guakeBlack: base.guakeBlack || black,
+        guakeRed: base.guakeRed || red,
+        guakeGreen: base.guakeGreen || green,
+        guakeYellow: base.guakeYellow || yellow,
+        guakeBlue: base.guakeBlue || blue,
+        guakeMagenta: base.guakeMagenta || magenta,
+        guakeCyan: base.guakeCyan || cyan,
+        guakeWhite: base.guakeWhite || white,
+        guakeBrightBlack: base.guakeBrightBlack || brightBlack,
+        guakeBrightRed: base.guakeBrightRed || brightRed,
+        guakeBrightGreen: base.guakeBrightGreen || brightGreen,
+        guakeBrightYellow: base.guakeBrightYellow || brightYellow,
+        guakeBrightBlue: base.guakeBrightBlue || brightBlue,
+        guakeBrightMagenta: base.guakeBrightMagenta || brightMagenta,
+        guakeBrightCyan: base.guakeBrightCyan || brightCyan,
+        guakeBrightWhite: base.guakeBrightWhite || brightWhite,
+        guakeForeground: base.guakeForeground || foreground,
+        guakeBackground: base.guakeBackground || background,
 
         // Hyper
         hyperCursor: base.hyperCursor || cursor,
@@ -578,6 +599,9 @@ function generate() {
         `./applications/gnome-terminal/${gnomeTerminal.fileName}`,
         gnomeTerminal.content
     );
+
+    const guake = generateGuake(meta.name, scheme);
+    fs.writeFileSync(`./applications/guake/${guake.fileName}`, guake.content);
 
     const hyper = generateHyper(scheme);
     fs.writeFileSync(`./applications/hyper/${hyper.fileName}`, hyper.content);
