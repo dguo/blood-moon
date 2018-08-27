@@ -59,8 +59,8 @@ hi WildMenu guifg=#800020 ctermfg=125 guibg=#FFFAFA ctermbg=231
 " Diffs """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi DiffChange guifg=#FDFF00 ctermfg=226 guibg=#10100E ctermbg=16
 hi DiffText guifg=#007FFF ctermfg=33 guibg=#10100E ctermbg=16
-hi DiffAdd guifg=#03C03C ctermfg=41 guibg=#10100E ctermbg=16
-hi DiffDelete guifg=#FF2400 ctermfg=202 guibg=#10100E ctermbg=16
+hi DiffAdd guifg=#009F6B ctermfg=36 guibg=#10100E ctermbg=16
+hi DiffDelete guifg=#C40233 ctermfg=161 guibg=#10100E ctermbg=16
 
 " Popup menu """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Pmenu guifg=#10100E ctermfg=16 guibg=#FFFAFA ctermbg=231

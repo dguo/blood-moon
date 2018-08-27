@@ -11,6 +11,7 @@ import generateCSS from './applications/css/template';
 import generateFirefox from './applications/firefox/template';
 import generateGnomeTerminal from './applications/gnome-terminal/template';
 import generateGuake from './applications/guake/template';
+import generateHighlightJs from './applications/highlightjs/template';
 import generateHyper from './applications/hyper/template';
 import generateiTerm from './applications/iterm/template';
 import generateKitty from './applications/kitty/template';
@@ -83,10 +84,20 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
     const ruler = base.ruler || lighten(background, 0.3);
     const selection = base.selection || darkRed;
     const selectionText = base.selectionText || white;
+    const diffAddition = base.diffAddition || green;
+    const diffDeletion = base.diffDeletion || red;
 
     // syntax
-    const comment = base.comment || gray;
-    const link = base.link || blue;
+    const syntaxBuiltIn = base.syntaxBuiltIn || red;
+    const syntaxComment = base.syntaxComment || gray;
+    const syntaxKeyword = base.syntaxKeyword || green;
+    const syntaxLink = base.syntaxLink || blue;
+    const syntaxLiteral = base.syntaxLiteral || magenta;
+    const syntaxNumber = base.syntaxNumber || magenta;
+    const syntaxRegExp = base.syntaxRegExp || blue;
+    const syntaxString = base.syntaxString || blue;
+    const syntaxTitle = base.syntaxString || red;
+    const syntaxType = base.syntaxType || green;
 
     const hyperSelection = base.hyperSelection || transparent(selection, 0.3);
     const hyperWhite = base.hyperWhite || white;
@@ -144,10 +155,21 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         foreground,
         selection,
         selectionText,
-        // syntax
-        link,
         ruler,
-        comment,
+        diffAddition,
+        diffDeletion,
+        // syntax
+        syntaxBuiltIn,
+        syntaxComment,
+        syntaxKeyword,
+        syntaxLink,
+        syntaxLiteral,
+        syntaxNumber,
+        syntaxRegExp,
+        syntaxString,
+        syntaxTitle,
+        syntaxType,
+
         // Alacritty
         alacrittyBackground: base.alacrittyBackground || background,
         alacrittyForeground: base.alacrittyForeground || foreground,
@@ -196,7 +218,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         cssH1: base.cssH1 || red,
         cssH2: base.cssH2 || green,
         cssI: base.cssI || red,
-        cssA: base.cssA || link,
+        cssA: base.cssA || syntaxLink,
         // Firefox
         firefoxAccent: base.firefoxAccent || background,
         firefoxButtonBackgroundActive:
@@ -270,6 +292,52 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         guakeForeground: base.guakeForeground || foreground,
         guakeBackground: base.guakeBackground || background,
 
+        // Highlight.js
+        hljsBackground: base.hljsBackground || background,
+        hljsForeground: base.hljsForeground || foreground,
+        hljsKeyword: base.hljsKeyword || syntaxKeyword,
+        hljsBuiltIn: base.hljsBuiltIn || syntaxBuiltIn,
+        hljsType: base.hljsType || syntaxType,
+        hljsLiteral: base.hljsLiteral || syntaxLiteral,
+        hljsNumber: base.hljsNumber || syntaxNumber,
+        hljsRegExp: base.hljsRegExp || syntaxRegExp,
+        hljsString: base.hljsString || syntaxString,
+        // https://highlightjs.readthedocs.io/en/latest/style-guide.html#subst
+        hljsSubst: base.hljsSubst || foreground,
+        hljsSymbol: base.hljsSymbol || red,
+        hljsClass: base.hljsClass || red,
+        hljsFunction: base.hljsFunction || red,
+        hljsTitle: base.hljsTitle || syntaxTitle,
+        hljsParams: base.hljsParams || red,
+        hljsComment: base.hljsComment || syntaxComment,
+        hljsDocTag: base.hljsDocTag || red,
+        hljsMeta: base.hljsMeta || red,
+        hljsMetaKeyword: base.hljsMetaKeyword || red,
+        hljsMetaString: base.hljsMetaString || red,
+        hljsSection: base.hljsSection || red,
+        hljsTag: base.hljsTag || red,
+        hljsName: base.hljsName || red,
+        hljsBuiltInName: base.hljsBuiltInName || red,
+        hljsAttr: base.hljsAttr || red,
+        hljsAttribute: base.hljsAttribute || red,
+        hljsVariable: base.hljsVariable || red,
+        hljsBullet: base.hljsBullet || red,
+        hljsCode: base.hljsCode || red,
+        hljsEmphasis: base.hljsEmphasis || red,
+        hljsStrong: base.hljsStrong || red,
+        hljsFormula: base.hljsFormula || red,
+        hljsLink: base.hljsLink || syntaxLink,
+        hljsQuote: base.hljsQuote || red,
+        hljsSelectorTag: base.hljsSelectorTag || red,
+        hljsSelectorId: base.hljsSelectorId || red,
+        hljsSelectorClass: base.hljsSelectorClass || red,
+        hljsSelectorAttr: base.hljsSelectorAttr || red,
+        hljsSelectorPseudo: base.hljsSelectorPseudo || red,
+        hljsTemplateTag: base.hljsTemplateTag || red,
+        hljsTemplateVariable: base.hljsTemplateVariable || red,
+        hljsDiffAddition: base.hljsDiffAddition || diffAddition,
+        hljsDiffDeletion: base.hljsDiffDeletion || diffDeletion,
+
         // Hyper
         hyperCursor: base.hyperCursor || cursor,
         hyperCursorAccent: base.hyperCursorAccent || background,
@@ -316,7 +384,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         iTermBold: base.iTermBold || bold,
         iTermCursor: base.iTermCursor || cursor,
         iTermForeground: base.iTermForeground || foreground,
-        iTermLink: base.iTermLink || link,
+        iTermLink: base.iTermLink || syntaxLink,
         iTermSelectionText: base.iTermSelectionText || selectionText,
         iTermSelection: base.iTermSelection || selection,
         // Kitty
@@ -337,7 +405,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         kittyBrightCyan: base.kittyBrightCyan || brightCyan,
         kittyBrightWhite: base.kittyBrightWhite || brightWhite,
         kittyCursor: base.kittyCursor || cursor,
-        kittyLink: base.kittyLink || link,
+        kittyLink: base.kittyLink || syntaxLink,
         kittyActiveBorder: base.kittyActiveBorder || border,
         kittyInactiveBorder: base.kittyInactiveBorder || border,
         kittyBellBorder: base.kittyBellBorder || border,
@@ -510,7 +578,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         vimMatchParen: base.vimMatchParen || [selectionText, selection],
         vimSearch: base.vimSearch || [selectionText, selection],
         vimVisual: base.vimVisual || [selectionText, selection],
-        vimComment: base.vimComment || [comment],
+        vimComment: base.vimComment || [syntaxComment],
         vimConstant: base.vimConstant || [magenta],
         vimString: base.vimString || [blue],
         vimCharacter: base.vimCharacter || [blue],
@@ -519,7 +587,7 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         vimStatement: base.vimStatement || [green],
         vimNoise: base.vimNoise || [green],
         vimPreProc: base.vimPreProc || [green],
-        vimType: base.vimType || [green],
+        vimType: base.vimType || [syntaxType],
         vimSpecial: base.vimSpecial || [orange],
         vimTodo: base.vimTodo || [background, orange],
         vimLineNr: base.vimLineNr || [gray],
@@ -533,8 +601,8 @@ function getColorScheme(base: BaseColorScheme): ColorScheme {
         vimWildMenu: base.vimWildMenu || [darkRed, brightWhite],
         vimDiffChange: base.vimDiffChange || [brightYellow, background],
         vimDiffText: base.vimDiffText || [brightBlue, background],
-        vimDiffAdd: base.vimDiffAdd || [brightGreen, background],
-        vimDiffDelete: base.vimDiffDelete || [brightRed, background],
+        vimDiffAdd: base.vimDiffAdd || [diffAddition, background],
+        vimDiffDelete: base.vimDiffDelete || [diffDeletion, background],
         vimPmenu: base.vimPmenu || [background, brightWhite],
         vimPmenuSel: base.vimPmenuSel || [brightWhite, selection],
         vimPmenuSbar: base.vimPmenuSbar || [null, foreground],
@@ -602,6 +670,12 @@ function generate() {
 
     const guake = generateGuake(meta.name, scheme);
     fs.writeFileSync(`./applications/guake/${guake.fileName}`, guake.content);
+
+    const highlightJs = generateHighlightJs(meta, scheme);
+    fs.writeFileSync(
+        `./applications/highlightjs/${highlightJs.fileName}`,
+        highlightJs.content
+    );
 
     const hyper = generateHyper(scheme);
     fs.writeFileSync(`./applications/hyper/${hyper.fileName}`, hyper.content);

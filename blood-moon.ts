@@ -69,8 +69,8 @@ const colors: BaseColorScheme = {
     selectionText: white,
     ruler: lighten(background, 0.3),
     // syntax
-    link: blue,
-    comment: gray
+    syntaxLink: blue,
+    syntaxComment: gray
 };
 
 const theme: Theme = {

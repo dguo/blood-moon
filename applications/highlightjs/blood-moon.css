@@ -1,0 +1,173 @@
+/* Blood Moon for Highlight.js */
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #10100E;
+    color: #C6C6C4;
+}
+
+.hljs-keyword {
+    color: #009F6B;
+}
+
+.hljs-built_in {
+    color: #C40233;
+}
+
+.hljs-type {
+    color: #009F6B;
+}
+
+.hljs-literal {
+    color: #9A4EAE;
+}
+
+.hljs-number {
+    color: #9A4EAE;
+}
+
+.hljs-regexp {
+    color: #0087BD;
+}
+
+.hljs-string {
+    color: #0087BD;
+}
+
+.hljs-subst {
+    color: #C6C6C4;
+}
+
+.hljs-symbol {
+    color: #C40233;
+}
+
+.hljs-class {
+    color: #C40233;
+}
+
+.hljs-function {
+    color: #C40233;
+}
+
+.hljs-title {
+    color: #C40233;
+}
+
+.hljs-params {
+    color: #C40233;
+}
+
+.hljs-comment {
+    color: #696969;
+}
+
+.hljs-doctag {
+    color: #C40233;
+}
+
+.hljs-meta {
+    color: #C40233;
+}
+
+.hljs-meta-keyword {
+    color: #C40233;
+}
+
+.hljs-meta-string {
+    color: #C40233;
+}
+
+.hljs-section {
+    color: #C40233;
+}
+
+.hljs-tag {
+    color: #C40233;
+}
+
+.hljs-name {
+    color: #C40233;
+}
+
+.hljs-built-in-name {
+    color: #C40233;
+}
+
+.hljs-attr {
+    color: #C40233;
+}
+
+.hljs-attribute {
+    color: #C40233;
+}
+
+.hljs-variable {
+    color: #C40233;
+}
+
+.hljs-bullet {
+    color: #C40233;
+}
+
+.hljs-code {
+    color: #C40233;
+}
+
+.hljs-emphasis {
+    color: #C40233;
+}
+
+.hljs-strong {
+    color: #C40233;
+}
+
+.hljs-formula {
+    color: #C40233;
+}
+
+.hljs-link {
+    color: #0087BD;
+}
+
+.hljs-quote {
+    color: #C40233;
+}
+
+.hljs-selector-tag {
+    color: #C40233;
+}
+
+.hljs-selector-id {
+    color: #C40233;
+}
+
+.hljs-selector-class {
+    color: #C40233;
+}
+
+.hljs-selector-attr {
+    color: #C40233;
+}
+
+.hljs-selector-pseudo {
+    color: #C40233;
+}
+
+.hljs-template-tag {
+    color: #C40233;
+}
+
+.hljs-template-variable {
+    color: #C40233;
+}
+
+.hljs-addition {
+    color: #009F6B;
+}
+
+.hljs-deletion {
+    color: #C40233;
+}

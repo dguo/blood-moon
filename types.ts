@@ -42,10 +42,20 @@ export interface ColorScheme {
     selection: ColorHex;
     selectionText: ColorHex;
     ruler: ColorHex;
+    diffAddition: ColorHex;
+    diffDeletion: ColorHex;
 
     // syntax
-    comment: ColorHex;
-    link: ColorHex;
+    syntaxBuiltIn: ColorHex;
+    syntaxComment: ColorHex;
+    syntaxKeyword: ColorHex;
+    syntaxLink: ColorHex;
+    syntaxLiteral: ColorHex;
+    syntaxNumber: ColorHex;
+    syntaxRegExp: ColorHex;
+    syntaxString: ColorHex;
+    syntaxTitle: ColorHex;
+    syntaxType: ColorHex;
 
     // Alacritty
     alacrittyBackground: ColorHex;
@@ -171,6 +181,59 @@ export interface ColorScheme {
     guakeBrightWhite: ColorHex;
     guakeBackground: ColorHex;
     guakeForeground: ColorHex;
+
+    // Highlight.js
+    // https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html
+    hljsBackground: ColorHex;
+    hljsForeground: ColorHex;
+    // General-purpose
+    hljsKeyword: ColorHex;
+    hljsBuiltIn: ColorHex;
+    hljsType: ColorHex;
+    hljsLiteral: ColorHex;
+    hljsNumber: ColorHex;
+    hljsRegExp: ColorHex;
+    hljsString: ColorHex;
+    hljsSubst: ColorHex;
+    hljsSymbol: ColorHex;
+    hljsClass: ColorHex;
+    hljsFunction: ColorHex;
+    hljsTitle: ColorHex;
+    hljsParams: ColorHex;
+    // Meta
+    hljsComment: ColorHex;
+    hljsDocTag: ColorHex;
+    hljsMeta: ColorHex;
+    hljsMetaKeyword: ColorHex;
+    hljsMetaString: ColorHex;
+    // Tags, attributes, configs
+    hljsSection: ColorHex;
+    hljsTag: ColorHex;
+    hljsName: ColorHex;
+    hljsBuiltInName: ColorHex;
+    hljsAttr: ColorHex;
+    hljsAttribute: ColorHex;
+    hljsVariable: ColorHex;
+    // Markup
+    hljsBullet: ColorHex;
+    hljsCode: ColorHex;
+    hljsEmphasis: ColorHex;
+    hljsStrong: ColorHex;
+    hljsFormula: ColorHex;
+    hljsLink: ColorHex;
+    hljsQuote: ColorHex;
+    // CSS
+    hljsSelectorTag: ColorHex;
+    hljsSelectorId: ColorHex;
+    hljsSelectorClass: ColorHex;
+    hljsSelectorAttr: ColorHex;
+    hljsSelectorPseudo: ColorHex;
+    // Templates
+    hljsTemplateTag: ColorHex;
+    hljsTemplateVariable: ColorHex;
+    // Diff
+    hljsDiffAddition: ColorHex;
+    hljsDiffDeletion: ColorHex;
 
     // Hyper
     hyperCursor: ColorHex;
