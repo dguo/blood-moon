@@ -1,4 +1,6 @@
-# Blood Moon (work in progress) [![Build Status](https://travis-ci.org/dguo/blood-moon.svg?branch=master)](https://travis-ci.org/dguo/blood-moon)
+# Blood Moon (work in progress) 
+
+[![Build Status](https://travis-ci.org/dguo/blood-moon.svg?branch=master)](https://travis-ci.org/dguo/blood-moon) [![Netlify Status](https://api.netlify.com/api/v1/badges/b10d4761-1ed5-475d-a8cf-8ccd61ad1463/deploy-status)](https://app.netlify.com/sites/blood-moon/deploys)
 
 <img src="https://github.com/dguo/blood-moon/blob/master/docs/images/blood-moon.png" width="200">
 
