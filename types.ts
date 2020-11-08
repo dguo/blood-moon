@@ -396,6 +396,24 @@ export interface ColorScheme {
     slackActivePresence: ColorHex;
     slackMentionBadge: ColorHex;
 
+    // Sublime Text
+    sublimeTextBackground: ColorHex;
+    sublimeTextForeground: ColorHex;
+    sublimeTextCaret: ColorHex;
+    sublimeTextLineHighlight: ColorHex;
+    sublimeTextMisspelling: ColorHex;
+    sublimeTextFoldMarker: ColorHex;
+    sublimeTextMinimapBorder: ColorHex;
+    sublimeTextAccent: ColorHex;
+    sublimeTextGutter: ColorHex;
+    sublimeTextGutterForeground: ColorHex;
+    sublimeTextSelection: ColorHex;
+    sublimeTextSelectionForeground: ColorHex;
+    sublimeTextSelectionBorder: ColorHex;
+    sublimeTextInactiveSelection: ColorHex;
+    sublimeTextInactiveSelectionForeground: ColorHex;
+    sublimeTextHighlight: ColorHex;
+
     // Terminal
     terminalBlack: ColorHex;
     terminalRed: ColorHex;

@@ -19,6 +19,7 @@ import generateKonsole from './applications/konsole/template';
 import generateMintty from './applications/mintty/template';
 import generatePutty from './applications/putty/template';
 import generateSlack from './applications/slack/template';
+import generateSublimeText from './applications/sublime-text/template';
 import generateTerminal from './applications/terminal/template';
 import generateTerminator from './applications/terminator/template';
 import generateTermux from './applications/termux/template';
@@ -703,6 +704,12 @@ function generate() {
 
     const slack = generateSlack(meta.name, scheme);
     fs.writeFileSync(`./applications/slack/${slack.fileName}`, slack.content);
+
+    const sublimeText = generateSublimeText(meta, scheme);
+    fs.writeFileSync(
+        `./applications/sublime-text/${sublimeText.fileName}`,
+        sublimeText.content
+    );
 
     const terminal = generateTerminal(meta.name, scheme);
     fs.writeFileSync(
