@@ -4,6 +4,6 @@ Installation:
 
 ```bash
 $ pkg install curl
-$ curl -Lo ~/.termux/colors.properties --create-dirs https://raw.githubusercontent.com/dguo/blood-moon/master/applications/termux/blood-moon.properties
+$ curl -Lo ~/.termux/colors.properties --create-dirs https://raw.githubusercontent.com/dguo/blood-moon/main/applications/termux/blood-moon.properties
 $ termux-reload-settings
 ```

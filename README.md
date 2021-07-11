@@ -1,9 +1,9 @@
 # Blood Moon (work in progress)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b10d4761-1ed5-475d-a8cf-8ccd61ad1463/deploy-status)](https://app.netlify.com/sites/blood-moon/deploys)
-[![CI status](https://github.com/dguo/blood-moon/workflows/CI/badge.svg)](https://github.com/dguo/blood-moon/actions?query=branch%3Amaster)
+[![CI status](https://github.com/dguo/blood-moon/workflows/CI/badge.svg)](https://github.com/dguo/blood-moon/actions?query=branch%3Amain)
 
-<img src="https://github.com/dguo/blood-moon/blob/master/docs/images/blood-moon.png" width="200">
+<img src="https://github.com/dguo/blood-moon/blob/main/docs/images/blood-moon.png" width="200">
 
 [Blood Moon](https://www.blood-moon.dannyguo.com) is a [color scheme for code](https://en.wikipedia.org/wiki/Syntax_highlighting).
 I used [Solarized](https://github.com/altercation/solarized) dark for several
