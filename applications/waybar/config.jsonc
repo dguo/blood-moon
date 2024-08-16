@@ -1,0 +1,106 @@
+{
+  "position": "bottom",
+  "margin-bottom": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+  "height": 35,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "battery",
+    "pulseaudio",
+    "network",
+    "temperature",
+    "clock"
+  ],
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 35,
+    "rewrite": {
+      "": "Hyprland"
+    },
+    "separate-outputs": true
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "󰽤",
+      "2": "󰽤",
+      "3": "󰽤",
+      "4": "󰽤",
+      "active": ""
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 4
+    }
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><big>{calendar}</big></tt>",
+    "format-alt": "{:%Y-%m-%d %H:%M:%}"
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "tooltip-format": "Núcleos: {freq} MHz",
+    "interval": 3,
+    "on-click": "alacritty -e htop"
+  },
+  "memory": {
+    "format": "  {}%",
+    "format-icons": [""],
+    "on-click": "alacritty -e glances",
+    "tooltip-format": "Used: {used} Gb\nTotal: {total} Gb",
+    "interval": 3
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""],
+    "interval": 3,
+    "tooltip": true
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    "format-wifi": "   {signalStrength}%",
+    "format-ethernet": "{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": " ⚠ ",
+    "on-click": "alacritty -e nmtui"
+  },
+  "pulseaudio": {
+    "format": "{icon}   {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  }
+}
